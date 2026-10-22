@@ -726,12 +726,12 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 9.5pt;
-            margin-top: 6px;
+            margin-top: 0;
         }
         .tutanak-table th,
         .tutanak-table td {
             border: 1px solid #000;
-            padding: 4px 5px;
+            padding: 3.5px 5px;
             text-align: center;
             vertical-align: middle;
         }
@@ -739,45 +739,153 @@
             text-align: left;
         }
         .tutanak-table th {
-            background: #eaeff5;
+            background: #ffffff;
             font-weight: bold;
         }
-        /* ================= SINAV TUTANAĞI (EK-1) STİLLERİ ================= */
-        .ek1-box {
-            border: 1px solid #000;
-            margin-bottom: 8px;
+        .vert-th {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            white-space: nowrap;
+            padding: 6px 2px !important;
+            height: 92px;
+            font-size: 8.8pt;
+            width: 34px;
+        }
+        /* ================= SINAV TUTANAĞI (YENI FORM) STİLLERİ ================= */
+        .ek1-section {
+            margin-bottom: 12px;
             page-break-inside: avoid;
+            break-inside: avoid;
         }
         .ek1-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 9.5pt;
+            font-size: 9.6pt;
         }
         .ek1-table td, .ek1-table th {
             border: 1px solid #000;
-            padding: 4.5px 6px;
+            padding: 5px 8px;
             vertical-align: middle;
         }
         .ek1-side-title {
-            width: 120px;
-            font-weight: bold;
+            width: 145px;
+            font-weight: normal;
             text-align: center;
-            background: #f1f5f9;
+            font-size: 10pt;
+            line-height: 1.3;
+        }
+        .ek1-notes {
+            font-size: 8.8pt;
+            line-height: 1.4;
+            margin: 5px 0 8px 0;
         }
         .sig-grid-dynamic {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 4px;
-            font-size: 9.2pt;
+            margin-top: 8px;
+            font-size: 9.5pt;
             table-layout: fixed;
         }
         .sig-grid-dynamic td {
             border: none !important;
             text-align: center;
-            padding: 4px 4px 22px 4px;
+            padding: 4px 4px 28px 4px;
             vertical-align: top;
         }
+        /* ================= SINAV SARF & NOT ÇİZELGESİ STİLLERİ ================= */
+        .cizelge-header {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 14px;
+        }
+        .cizelge-header h2 {
+            font-size: 10.5pt;
+            font-weight: bold;
+            margin: 2px 0;
+        }
+        .cizelge-header h3 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 12px 0 6px 0;
+        }
+        .cizelge-meta {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+            margin-bottom: 6px;
+        }
+        .cizelge-meta td {
+            padding: 3px 4px;
+            vertical-align: middle;
+        }
+        .cizelge-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9.5pt;
+        }
+        .cizelge-table th,
+        .cizelge-table td {
+            border: 1px solid #000;
+            padding: 5px 6px;
+            vertical-align: middle;
+        }
+        .cizelge-table th {
+            background-color: #d9d9d9;
+            font-weight: bold;
+            text-align: center;
+            font-size: 9pt;
+        }
+        .cizelge-table td {
+            height: 28px;
+        }
         /* ================= ZARF ÜST YAZISI STİLLERİ ================= */
+        .zarf-full-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 266mm;
+            padding: 6mm 6mm;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .zarf-kv-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+            margin-top: 10px;
+        }
+        .zarf-kv-table td {
+            padding: 6px 4px;
+            vertical-align: top;
+        }
+        .zarf-kv-table td.lbl {
+            font-weight: bold;
+            width: 115px;
+        }
+        .zarf-kv-table td.sep {
+            width: 12px;
+            text-align: center;
+        }
+        .zarf-mid-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+            margin-top: 18px;
+        }
+        .zarf-mid-table td {
+            padding: 7px 4px;
+            vertical-align: middle;
+        }
+        .zarf-mid-table td.lbl {
+            font-weight: bold;
+            width: 280px;
+        }
+        .zarf-mid-table td.sep {
+            width: 14px;
+            text-align: center;
+        }
         .envelope-half {
             border: 1.5px solid #000;
             padding: 12px 16px;
@@ -869,7 +977,7 @@
                 <img id="bannerLogo" class="brand-logo" alt="MEB Logo" />
                 <div class="brand-title">
                     <h1>MEB Kalfalık ve Ustalık Beceri Sınavı Evrak Otomasyonu</h1>
-                    <p>%100 Lokal ve İnternetsiz • 39 Alan / 193 Meslek Dalı Kriteri Gömülü • Tam Sınav Dosyası (Değerlendirme Formu + Sonuç Tutanağı + Sınav Tutanağı + Zarf Üst Yazısı)</p>
+                    <p>%100 Lokal ve İnternetsiz • <span id="bannerDbInfo">Meslek dalı verisi yükleniyor...</span> • Tam Sınav Dosyası (Değerlendirme Formu + Zarf + Sınav Tutanağı + Sonuç Tutanağı + Sarf & Not Çizelgesi)</p>
                 </div>
             </div>
             <div class="banner-actions">
@@ -902,7 +1010,7 @@
                         </div>
                         <div class="field">
                             <label>Eğitim-Öğretim Yılı</label>
-                            <input type="text" id="cfgOgretimYili" value="" placeholder="Örn: 2026-2027" oninput="onSettingsChange()" />
+                            <input type="text" id="cfgOgretimYili" value="2026 / 2027" placeholder="Örn: 2026 / 2027" oninput="onSettingsChange()" />
                         </div>
                         <div class="field">
                             <label>Sınav Dönemi</label>
@@ -910,13 +1018,13 @@
                         </div>
                         <div class="field">
                             <label>Varsayılan Sınav Tarihi</label>
-                            <input type="text" id="cfgTarih" value="" placeholder="Örn: 18.10.2026" oninput="onSettingsChange()" />
+                            <input type="text" id="cfgTarih" value="" placeholder="Örn: 19.09.2026" oninput="onSettingsChange()" />
                         </div>
                         <div class="field">
                             <label>Başlama / Bitiş Saati</label>
                             <div style="display:flex; gap:4px;">
-                                <input type="text" id="cfgSaat" value="" placeholder="09:00" oninput="onSettingsChange()" title="Sınav Başlama Saati" />
-                                <input type="text" id="cfgBitisSaat" value="" placeholder="13:00" oninput="onSettingsChange()" title="Sınav Bitiş Saati" />
+                                <input type="text" id="cfgSaat" value="09:00" placeholder="09:00" oninput="onSettingsChange()" title="Sınav Başlama Saati" />
+                                <input type="text" id="cfgBitisSaat" value="11:00" placeholder="11:00" oninput="onSettingsChange()" title="Sınav Bitiş Saati" />
                             </div>
                         </div>
                         <div class="field">
@@ -945,23 +1053,51 @@
                         </div>
                     </div>
                     <details class="extra-settings">
-                        <summary>⚙️ Tutanak & Zarf Ek Bilgileri (Saatler, Ders Adı, Sayılar)</summary>
+                        <summary>⚙️ Tutanak, Zarf ve Çizelge Ek Bilgileri (Saatler, Zarf Tipi, Sayılar)</summary>
                         <div class="form-grid-2" style="margin-top:6px;">
                             <div class="field full">
-                                <label>Dersin Adı (Tutanak/Zarf)</label>
-                                <input type="text" id="cfgDersAdi" value="BECERİ / UYGULAMA SINAVI" oninput="onSettingsChange()" />
+                                <label>Zarf / Üst Yazı Şablonu</label>
+                                <select id="cfgZarfTipi" onchange="onSettingsChange()">
+                                    <option value="yeni_ortali">Yeni Form: Tam Sayfa Sınav Evrakı Zarfı (Merkeze Ortalı 6 Satır Başlık)</option>
+                                    <option value="yeni_valilik">Yeni Form: Tam Sayfa Sınav Evrakı Zarfı (Valilik Başlıklı - Birebir PDF)</option>
+                                    <option value="ikili">A4 Sayfasına 2 Adet Zarf Üst Yazısı (Klasik 2'li)</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Valilik Başlığı (Zarf)</label>
+                                <input type="text" id="cfgValilik" value="İSTANBUL VALİLİĞİ" oninput="onSettingsChange()" />
+                            </div>
+                            <div class="field">
+                                <label>Zarf Grup / Dosya No</label>
+                                <input type="text" id="cfgZarfNo" value="1" oninput="onSettingsChange(); renderCandidateTable();" />
+                            </div>
+                            <div class="field full">
+                                <label>Dersin Adı (Tutanak / Zarf / Çizelge) <span class="sub">Boşsa Seçili Dal Adı Yazılır</span></label>
+                                <input type="text" id="cfgDersAdi" value="" placeholder="Otomatik: Seçili Meslek Dalı Adı" oninput="onSettingsChange()" />
                             </div>
                             <div class="field">
                                 <label>Komisyon Toplanma Saati</label>
-                                <input type="text" id="cfgToplanmaSaat" value="" placeholder="Örn: 08:30" oninput="onSettingsChange()" />
+                                <input type="text" id="cfgToplanmaSaat" value="08:00" placeholder="Örn: 08:00" oninput="onSettingsChange()" />
                             </div>
                             <div class="field">
                                 <label>Hazırlık Tamamlanma Saati</label>
-                                <input type="text" id="cfgHazirlikSaat" value="" placeholder="Örn: 08:50" oninput="onSettingsChange()" />
+                                <input type="text" id="cfgHazirlikSaat" value="08:30" placeholder="Örn: 08:30" oninput="onSettingsChange()" />
                             </div>
                             <div class="field">
-                                <label>Değerlendirme Tarih / Saati</label>
-                                <input type="text" id="cfgDegerlendirmeTarihSaat" value="" placeholder="Örn: 18.10.2026 - 14:00" oninput="onSettingsChange()" />
+                                <label>İnceleme / Değerlendirme Tarihi</label>
+                                <input type="text" id="cfgDegerlendirmeTarihSaat" value="" placeholder="Boşsa Sınav Tarihi yazılır" oninput="onSettingsChange()" />
+                            </div>
+                            <div class="field">
+                                <label>Evrak Teslim Tarihi</label>
+                                <input type="text" id="cfgTeslimTarihi" value="" placeholder="Boşsa Sınav Tarihi yazılır" oninput="onSettingsChange()" />
+                            </div>
+                            <div class="field">
+                                <label>Kullanılan Sınav Kağıdı</label>
+                                <input type="text" id="cfgKagitSayisi" value="" placeholder="Boşsa Aday Sayısı" oninput="onSettingsChange()" />
+                            </div>
+                            <div class="field">
+                                <label>Sarf Çizelgesi Üyesi</label>
+                                <input type="text" id="cfgSarfUye" value="" placeholder="Boşsa 1. Değerlendirici" oninput="onSettingsChange()" />
                             </div>
                             <div class="field">
                                 <label>Katılan / Katılmayan Sayısı</label>
@@ -977,8 +1113,8 @@
                                     <input type="text" id="cfgBasarisizSayisi" value="" placeholder="Başarısız" oninput="onSettingsChange()" />
                                 </div>
                             </div>
-                            <div class="field">
-                                <label>Sonuç Tutanağı Ek Boş Satır</label>
+                            <div class="field full">
+                                <label>Sonuç Tutanağı / Çizelge Ek Boş Satır</label>
                                 <input type="number" id="cfgExtraRows" value="0" min="0" max="40" oninput="onSettingsChange()" />
                             </div>
                         </div>
@@ -1112,6 +1248,10 @@
                                 <label>2. Değerlendirici</label>
                                 <input type="text" id="manDeg2" placeholder="Varsayılan 2. Değ." />
                             </div>
+                            <div class="field">
+                                <label>Zarf / Grup No <span class="sub">Boşsa Varsayılan Zarf No</span></label>
+                                <input type="text" id="manZarfNo" placeholder="Örn: 1, 2, A..." onkeydown="if(event.key==='Enter') addManualCandidateFromForm()" />
+                            </div>
                         </div>
                         <div class="btn-row" style="margin-top:8px; justify-content:flex-end;">
                             <button type="button" class="btn-emerald btn-sm" onclick="addManualCandidateFromForm()">➕ Adayı Listeye Ekle</button>
@@ -1124,6 +1264,8 @@
                             <button type="button" class="btn-primary btn-sm" onclick="applySelectedCriterionToSelected()">☑️ Seçili Kriteri Sadece Seçililere Uygula</button>
                             <button type="button" class="btn-ghost btn-sm" onclick="applyDefaultsToAllCandidates()">🔄 Kurum / Tarih / Değ. / Alan-Dal Tümüne Uygula</button>
                             <button type="button" class="btn-amber btn-sm" onclick="applyDefaultsToSelectedCandidates()">☑️ Kurum / Tarih / Değ. / Alan-Dal Sadece Seçililere Uygula</button>
+                            <button type="button" class="btn-purple btn-sm" onclick="applyZarfNoToSelected()" title="Ayarlardaki 'Zarf Grup / Dosya No' değerini seçili adaylara atar">✉️ Zarf / Grup No'yu Seçililere Ata</button>
+                            <button type="button" class="btn-ghost btn-sm" onclick="sortCandidatesByZarf()" title="Aday listesini Zarf / Grup numarasına göre sıralar (grup içi sıra korunur)">↕️ Zarf / Grup No'ya Göre Sırala</button>
                         </div>
                     </div>
                 </div>
@@ -1131,7 +1273,7 @@
             <!-- ADAY LİSTESİ TABLOSU -->
             <div class="candidate-table-container">
                 <div class="candidate-table-header">
-                    <h2>👥 Sınava Girecek Aday Listesi (<span id="candidateCount">0</span> Aday)<span id="selectedCandInfo" style="font-size:11.5px; font-weight:700; color:#1d4ed8; margin-left:8px;"></span></h2>
+                    <h2>👥 Sınava Girecek Aday Listesi (<span id="candidateCount">0</span> Aday)<span id="selectedCandInfo" style="font-size:11.5px; font-weight:700; color:#1d4ed8; margin-left:8px;"></span><span id="zarfGroupInfo" style="font-size:11.5px; font-weight:700; color:#7c3aed; margin-left:8px;"></span><span id="tcWarnInfo" style="font-size:11.5px; font-weight:700; color:#dc2626; margin-left:8px;"></span><span id="candSaveInfo" style="font-size:10.5px; font-weight:600; color:#64748b; margin-left:8px;"></span></h2>
                     <div class="btn-row">
                         <button type="button" class="btn-emerald btn-sm" onclick="addCandidateRow()">➕ Yeni Aday Ekle</button>
                         <button type="button" class="btn-teal btn-sm" onclick="exportCandidatesCsv()" title="Mevcut aday listesini Excel ile açılabilen CSV dosyası olarak indirir">📥 Aday Listesini Excel (.csv) İndir</button>
@@ -1144,6 +1286,7 @@
                             <tr>
                                 <th style="width:32px; text-align:center;" title="Tümünü Seç / Seçimi Kaldır"><input type="checkbox" id="chkSelectAllCand" onchange="toggleSelectAllCandidates(this.checked)" style="width:15px; height:15px; cursor:pointer;" /></th>
                                 <th style="width:34px;">#</th>
+                                <th style="width:70px;" title="Zarf / Grup No — boş bırakılırsa ayarlardaki varsayılan Zarf No kullanılır">Zarf / Grup</th>
                                 <th style="min-width:150px;">Adayın Adı ve Soyadı</th>
                                 <th style="width:110px;">T.C. Kimlik No</th>
                                 <th style="width:90px;">Sınav Tarihi</th>
@@ -1167,20 +1310,32 @@
                     <button type="button" class="doc-tab active" data-mode="forms" onclick="setDocMode('forms')">
                         📄 1. Aday Değerlendirme Formları
                     </button>
-                    <button type="button" class="doc-tab" data-mode="sonuc" onclick="setDocMode('sonuc')">
-                        📊 2. Sınav Sonuç Tutanağı
+                    <button type="button" class="doc-tab" data-mode="zarf" onclick="setDocMode('zarf')">
+                        ✉️ 2. Sınav Evrakı Zarfı
                     </button>
                     <button type="button" class="doc-tab" data-mode="tutanak" onclick="setDocMode('tutanak')">
-                        📝 3. Sınav Tutanağı (Ek-1)
+                        📝 3. Sınav Tutanağı
                     </button>
-                    <button type="button" class="doc-tab" data-mode="zarf" onclick="setDocMode('zarf')">
-                        ✉️ 4. Sınav Dosyası Üst Yazısı (Zarf)
+                    <button type="button" class="doc-tab" data-mode="sonuc" onclick="setDocMode('sonuc')">
+                        📊 4. Sınav Sonuç Tutanağı
+                    </button>
+                    <button type="button" class="doc-tab" data-mode="sarf_cizelge" onclick="setDocMode('sarf_cizelge')">
+                        📋 5. Sınav Sarf Çizelgesi
+                    </button>
+                    <button type="button" class="doc-tab" data-mode="not_cizelge" onclick="setDocMode('not_cizelge')">
+                        📈 6. Sınav Not Çizelgesi
                     </button>
                     <button type="button" class="doc-tab" data-mode="all" onclick="setDocMode('all')">
-                        📚 5. Tüm Sınav Dosyası (Tam Paket)
+                        📚 7. Tüm Sınav Dosyası (Tam Paket)
                     </button>
                 </div>
-                <div style="display:flex; align-items:center; gap:10px;">
+                <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                    <label id="zarfPaketWrap" style="display:none; align-items:center; gap:6px; font-size:12px; font-weight:700; color:#e2e8f0; white-space:nowrap;">
+                        ✉️ Basılacak:
+                        <select id="selZarfPaket" onchange="onZarfPaketChange()" style="padding:6px 8px; font-size:12px; border-radius:6px; max-width:300px;">
+                            <option value="__all">Tüm Adaylar (Tek Paket)</option>
+                        </select>
+                    </label>
                     <span id="pageCountBadge" class="badge-pill">0 A4 Sayfası</span>
                     <button type="button" class="print-cta" onclick="window.print()">🖨️ Seçili Evrakları Yazdır / PDF Kaydet</button>
                 </div>
@@ -1296,6 +1451,7 @@ let BUILTIN_DB = (Array.isArray(window.EXTERNAL_EXAM_DB) && window.EXTERNAL_EXAM
 const STORAGE_KEYS = {
     CUSTOM_EXAMS: "MEB_SINAV_CUSTOM_EXAMS_V2",
     SETTINGS: "MEB_SINAV_SETTINGS_V2",
+    CANDIDATES: "MEB_SINAV_CANDIDATES_V1",
     IDB_NAME: "MEB_SINAV_IDB_V2",
     IDB_STORE: "exam_packs"
 };
@@ -1362,13 +1518,25 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("bannerLogo").src = MEB_LOGO_DATA_URI;
     loadDatabase();
     loadSettingsFromStorage();
-    initSelectors();
-    loadSampleCandidates(true);
+    const storedCands = readStoredCandidates();
+    initSelectors(storedCands?.branchId);
+    if (storedCands && Array.isArray(storedCands.list) && storedCands.list.length) {
+        candidates = storedCands.list.map(c => Object.assign({ selected: false, zarfNo: "" }, c));
+        renderCandidateTable();
+        renderPreview();
+    } else if (!storedCands) {
+        loadSampleCandidates(true);
+    } else {
+        renderCandidateTable();
+        renderPreview();
+    }
+    candidatesStorageReady = true;
+    saveCandidatesToStorage();
     loadPackFromIdb().then(idbPack => {
         if (Array.isArray(idbPack) && idbPack.length > BUILTIN_DB.length) {
             BUILTIN_DB = idbPack;
             loadDatabase();
-            initSelectors();
+            initSelectors(document.getElementById("selBranch")?.value);
             renderPreview();
         }
     });
@@ -1464,6 +1632,11 @@ function loadDatabase() {
     const uniqueAlans = new Set(EXAM_DB.map(x => x.al)).size;
     const uniqueDals = new Set(EXAM_DB.map(x => x.dl)).size;
     document.getElementById("dbStatsBadge").textContent = `${uniqueAlans} Alan • ${uniqueDals} Dal Hazır (Kalfalık & Ustalık)`;
+    const bannerInfo = document.getElementById("bannerDbInfo");
+    if (bannerInfo) {
+        const kaynak = BUILTIN_DB === FALLBACK_DB ? "⚠️ Veri.js bulunamadı, yalnızca yedek dal yüklü" : "Kalfalık-Ustalık_Veri.js'ten yüklendi";
+        bannerInfo.textContent = `${uniqueAlans} Alan / ${EXAM_DB.length} Meslek Dalı Kriteri (${kaynak})`;
+    }
 }
 function loadSettingsFromStorage() {
     try {
@@ -1473,15 +1646,23 @@ function loadSettingsFromStorage() {
         const ids = [
             "cfgMerkez", "cfgYer", "cfgOgretimYili", "cfgDonem", "cfgTarih",
             "cfgSaat", "cfgBitisSaat", "cfgDeg1", "cfgDeg2", "cfgDeg3",
-            "cfgBaskan", "cfgCopiesPerCandidate", "cfgDersAdi",
-            "cfgToplanmaSaat", "cfgHazirlikSaat", "cfgDegerlendirmeTarihSaat",
-            "cfgKatilanSayisi", "cfgKatilmayanSayisi", "cfgBasariliSayisi",
-            "cfgBasarisizSayisi", "cfgExtraRows"
+            "cfgBaskan", "cfgCopiesPerCandidate", "cfgZarfTipi", "cfgValilik",
+            "cfgZarfNo", "cfgDersAdi", "cfgToplanmaSaat", "cfgHazirlikSaat",
+            "cfgDegerlendirmeTarihSaat", "cfgTeslimTarihi", "cfgKagitSayisi",
+            "cfgSarfUye", "cfgKatilanSayisi", "cfgKatilmayanSayisi",
+            "cfgBasariliSayisi", "cfgBasarisizSayisi", "cfgExtraRows"
         ];
         for (const id of ids) {
             if (s[id] !== undefined && document.getElementById(id)) {
                 document.getElementById(id).value = s[id];
             }
+        }
+        // Migrate old static default "BECERİ / UYGULAMA SINAVI" to empty so Dal name is used automatically
+        if (document.getElementById("cfgDersAdi")?.value === "BECERİ / UYGULAMA SINAVI") {
+            document.getElementById("cfgDersAdi").value = "";
+        }
+        if (/^mahmut\s+/i.test(document.getElementById("cfgBaskan")?.value || "")) {
+            document.getElementById("cfgBaskan").value = "";
         }
         const chkIds = ["chkIncludeLists", "chkListIsg", "chkListTech", "chkListSarf", "chkSeparateListPage", "chkCompactMode"];
         for (const cid of chkIds) {
@@ -1498,10 +1679,11 @@ function saveSettingsToStorage() {
         const ids = [
             "cfgMerkez", "cfgYer", "cfgOgretimYili", "cfgDonem", "cfgTarih",
             "cfgSaat", "cfgBitisSaat", "cfgDeg1", "cfgDeg2", "cfgDeg3",
-            "cfgBaskan", "cfgCopiesPerCandidate", "cfgDersAdi",
-            "cfgToplanmaSaat", "cfgHazirlikSaat", "cfgDegerlendirmeTarihSaat",
-            "cfgKatilanSayisi", "cfgKatilmayanSayisi", "cfgBasariliSayisi",
-            "cfgBasarisizSayisi", "cfgExtraRows"
+            "cfgBaskan", "cfgCopiesPerCandidate", "cfgZarfTipi", "cfgValilik",
+            "cfgZarfNo", "cfgDersAdi", "cfgToplanmaSaat", "cfgHazirlikSaat",
+            "cfgDegerlendirmeTarihSaat", "cfgTeslimTarihi", "cfgKagitSayisi",
+            "cfgSarfUye", "cfgKatilanSayisi", "cfgKatilmayanSayisi",
+            "cfgBasariliSayisi", "cfgBasarisizSayisi", "cfgExtraRows"
         ];
         const s = {};
         for (const id of ids) {
@@ -1519,10 +1701,18 @@ function saveSettingsToStorage() {
 function resetInstitutionSettings() {
     document.getElementById("cfgMerkez").value = "İMES Süheyl ERBOZ Mesleki Eğitim Merkezi";
     document.getElementById("cfgYer").value = "İMES Süheyl ERBOZ Mesleki Eğitim Merkezi";
+    document.getElementById("cfgOgretimYili").value = "2026 / 2027";
+    document.getElementById("cfgSaat").value = "09:00";
+    document.getElementById("cfgBitisSaat").value = "11:00";
+    document.getElementById("cfgZarfTipi").value = "yeni_ortali";
+    document.getElementById("cfgValilik").value = "İSTANBUL VALİLİĞİ";
+    document.getElementById("cfgZarfNo").value = "1";
+    document.getElementById("cfgToplanmaSaat").value = "08:00";
+    document.getElementById("cfgHazirlikSaat").value = "08:30";
     const clearIds = [
-        "cfgOgretimYili", "cfgDonem", "cfgTarih", "cfgSaat", "cfgBitisSaat",
-        "cfgDeg1", "cfgDeg2", "cfgDeg3", "cfgBaskan",
-        "cfgToplanmaSaat", "cfgHazirlikSaat", "cfgDegerlendirmeTarihSaat",
+        "cfgDonem", "cfgTarih", "cfgDeg1", "cfgDeg2", "cfgDeg3", "cfgBaskan",
+        "cfgDersAdi", "cfgDegerlendirmeTarihSaat", "cfgTeslimTarihi",
+        "cfgKagitSayisi", "cfgSarfUye",
         "cfgKatilanSayisi", "cfgKatilmayanSayisi", "cfgBasariliSayisi", "cfgBasarisizSayisi"
     ];
     for (const id of clearIds) {
@@ -1530,7 +1720,6 @@ function resetInstitutionSettings() {
         if (el) el.value = "";
     }
     document.getElementById("cfgCopiesPerCandidate").value = "1";
-    document.getElementById("cfgDersAdi").value = "BECERİ / UYGULAMA SINAVI";
     document.getElementById("cfgExtraRows").value = "0";
     saveSettingsToStorage();
     applyDefaultsToAllCandidates();
@@ -1540,7 +1729,13 @@ function onSettingsChange() {
     renderPreview();
 }
 // ================= DAL VE KRİTER SEÇİCİLER =================
-function initSelectors() {
+function initSelectors(preferredBranchId = "") {
+    const pref = preferredBranchId ? EXAM_DB.find(x => x.id === preferredBranchId) : null;
+    if (pref) {
+        document.getElementById("selSeviye").value = pref.sv;
+        populateAlanSelector(pref.al, pref.id);
+        return;
+    }
     document.getElementById("selSeviye").value = "Kalfalık";
     populateAlanSelector("MOTORLU ARAÇLAR TEKNOLOJİSİ ALANI", "K_Otomotiv Elektromekanik");
 }
@@ -2218,7 +2413,14 @@ function parseExcelRows(lines, append = false) {
     const def = getDefaults();
     const parsed = [];
     let headerMap = null;
-    for (let idx = 0; idx < lines.length; idx++) {
+    // Başlık satırını ilk 10 satır içinde ara (üstte okul adı / dönem gibi başlık satırları olabilir)
+    let headerIdx = -1;
+    for (let h = 0; h < Math.min(10, lines.length); h++) {
+        const hCols = splitExcelLine(lines[h]).filter(Boolean);
+        if (hCols.length >= 2 && isCandidateHeaderText(upTr(hCols.join(" ")))) { headerIdx = h; break; }
+    }
+    let sawZarfColumn = false;
+    for (let idx = Math.max(0, headerIdx); idx < lines.length; idx++) {
         const line = String(lines[idx] || "").trim();
         if (!line) continue;
         let cols;
@@ -2232,12 +2434,12 @@ function parseExcelRows(lines, append = false) {
             cols = [line.trim()];
         }
         // Başlık satırını tespit et ve sütun haritasını çıkar
-        const joinedUpper = upTr(cols.join(" "));
-        if (idx === 0 && (joinedUpper.includes("AD SOYAD") || joinedUpper.includes("ADI SOYADI") || joinedUpper.includes("KİMLİK") || joinedUpper.includes("ÖĞRENCİ") || joinedUpper.includes("ADAYIN ADI"))) {
+        if (idx === headerIdx) {
             headerMap = {};
             cols.forEach((h, cIdx) => {
                 const hu = upTr(h);
-                if (hu.includes("SIRA") || hu === "#" || hu === "NO") headerMap.sira = cIdx;
+                if (isZarfHeader(hu)) { if (headerMap.zarfNo === undefined) headerMap.zarfNo = cIdx; }
+                else if (hu.includes("SIRA") || hu === "#" || hu === "NO") headerMap.sira = cIdx;
                 else if (hu.includes("KİMLİK") || hu === "TC" || hu === "T.C." || hu.includes("TC NO")) headerMap.tc = cIdx;
                 else if (hu.includes("AD SOYAD") || hu.includes("ADI SOYADI") || hu.includes("ADAY")) headerMap.adSoyad = cIdx;
                 else if ((hu === "ADI" || hu === "AD") && headerMap.ad === undefined) headerMap.ad = cIdx;
@@ -2252,8 +2454,11 @@ function parseExcelRows(lines, append = false) {
                 else if (hu.includes("DAL")) headerMap.dal = cIdx;
                 else if (hu.includes("KRİTER") || hu.includes("BÖLÜM") || hu.includes("SORU")) headerMap.kriter = cIdx;
             });
+            if (headerMap.zarfNo !== undefined) sawZarfColumn = true;
             continue;
         }
+        // Başlık bulunduysa altındaki "Toplam", "İmza" gibi alt bilgi satırlarını atla
+        if (headerMap && /^(TOPLAM|GENEL TOPLAM|İMZA|ONAY|MÜDÜR)/.test(upTr(cols.filter(Boolean)[0] || ""))) continue;
         let adSoyad = "";
         let tc = "";
         let tarih = def.tarih;
@@ -2266,7 +2471,9 @@ function parseExcelRows(lines, append = false) {
         let dalId = def.dalId;
         let dal = def.dal;
         let kriter = def.kriter;
+        let zarfNo = "";
         if (headerMap && (headerMap.adSoyad !== undefined || headerMap.ad !== undefined)) {
+            if (headerMap.zarfNo !== undefined) zarfNo = normalizeZarfNo(cols[headerMap.zarfNo]);
             if (headerMap.adSoyad !== undefined) {
                 adSoyad = cols[headerMap.adSoyad] || "";
             } else {
@@ -2372,7 +2579,7 @@ function parseExcelRows(lines, append = false) {
             }
         }
         if (adSoyad) {
-            parsed.push({ selected: false, adSoyad, tc, tarih, merkez, yer, saat, degerlendirici, degerlendirici2, alan, dalId, dal, kriter });
+            parsed.push({ selected: false, zarfNo, adSoyad, tc, tarih, merkez, yer, saat, degerlendirici, degerlendirici2, alan, dalId, dal, kriter });
         }
     }
     if (!parsed.length) {
@@ -2383,6 +2590,10 @@ function parseExcelRows(lines, append = false) {
     } else {
         candidates = parsed;
     }
+    // Excel'de zarf/grup sütunu varsa listeyi zarf numarasına göre otomatik sırala
+    if (sawZarfColumn && parsed.some(c => c.zarfNo)) {
+        stableSortCandidatesByZarf();
+    }
     renderCandidateTable();
     renderPreview();
     return parsed.length;
@@ -2392,7 +2603,7 @@ function exportCandidatesCsv() {
         alert("İndirilecek aday listesi boş.");
         return;
     }
-    const headers = ["Sıra No", "Adayın Adı ve Soyadı", "T.C. Kimlik No", "Sınav Tarihi", "Saat", "Ölçme ve Değerlendirme Yeri", "1. Değerlendirici", "2. Değerlendirici", "Meslek Alanı", "Meslek Dalı", "Uygulama Kriteri"];
+    const headers = ["Sıra No", "Zarf / Grup No", "Adayın Adı ve Soyadı", "T.C. Kimlik No", "Sınav Tarihi", "Saat", "Ölçme ve Değerlendirme Yeri", "1. Değerlendirici", "2. Değerlendirici", "Meslek Alanı", "Meslek Dalı", "Uygulama Kriteri"];
     const escCsv = (val) => {
         const s = String(val ?? "").replace(/"/g, '""');
         return /[;"\r\n]/.test(s) ? `"${s}"` : s;
@@ -2405,6 +2616,7 @@ function exportCandidatesCsv() {
             const cDal = c.dal || (cEx ? (cEx.am ? `${cEx.dl} (${cEx.am})` : cEx.dl) : "");
             return [
                 idx + 1,
+                escCsv(getCandZarfNo(c)),
                 escCsv(c.adSoyad),
                 escCsv(c.tc),
                 escCsv(c.tarih),
@@ -2438,6 +2650,7 @@ function addManualCandidateFromForm() {
     const kriterEl = document.getElementById("manKriter");
     const deg1El = document.getElementById("manDeg1");
     const deg2El = document.getElementById("manDeg2");
+    const zarfEl = document.getElementById("manZarfNo");
     const adSoyad = (adSoyadEl?.value || "").trim();
     if (!adSoyad) {
         alert("Lütfen eklenecek adayın Ad Soyad bilgisini girin.");
@@ -2450,6 +2663,7 @@ function addManualCandidateFromForm() {
     const dal = manExam ? (manExam.am ? `${manExam.dl} (${manExam.am})` : manExam.dl) : def.dal;
     candidates.push({
         selected: false,
+        zarfNo: normalizeZarfNo(zarfEl?.value),
         adSoyad,
         tc: (tcEl?.value || "").trim(),
         tarih: (tarihEl?.value || "").trim() || def.tarih,
@@ -2500,6 +2714,7 @@ function toggleSelectCandidate(index, checked) {
     if (!candidates[index]) return;
     candidates[index].selected = Boolean(checked);
     updateSelectedCandBadge();
+    saveCandidatesToStorage();
 }
 function toggleSelectAllCandidates(checked) {
     candidates.forEach(c => {
@@ -2513,6 +2728,27 @@ function renderCandidateTable() {
     const seviye = document.getElementById("selSeviye")?.value || "Kalfalık";
     const levelExams = EXAM_DB.filter(x => x.sv === seviye);
     const alanSet = Array.from(new Set(levelExams.map(x => x.al))).sort((a, b) => a.localeCompare(b, "tr"));
+    // Zarf / Grup No özetleri
+    const hasExplicitZarf = candidates.some(c => normalizeZarfNo(c.zarfNo));
+    const groupCounts = {};
+    candidates.forEach(c => {
+        const k = getCandZarfNo(c);
+        groupCounts[k] = (groupCounts[k] || 0) + 1;
+    });
+    const groupKeys = Object.keys(groupCounts).sort(compareZarfNo);
+    // T.C. Kimlik No kontrolleri (geçersiz + tekrar eden)
+    const tcCounts = {};
+    candidates.forEach(c => {
+        const t = String(c.tc || "").trim();
+        if (t) tcCounts[t] = (tcCounts[t] || 0) + 1;
+    });
+    let tcIssueCount = 0;
+    const zarfInfoEl = document.getElementById("zarfGroupInfo");
+    if (zarfInfoEl) {
+        zarfInfoEl.textContent = hasExplicitZarf
+            ? "• ✉️ " + groupKeys.map(k => `Zarf ${k}: ${groupCounts[k]}`).join(" | ")
+            : "";
+    }
     tbody.innerHTML = candidates.map((c, i) => {
         const cExam = getCandidateExam(c);
         const cAlan = cExam ? cExam.al : (c.alan || currentExam?.al || "");
@@ -2529,14 +2765,33 @@ function renderCandidateTable() {
         const critOptions = bChoices.map(b =>
             `<option value="${escapeHtml(b.c)}" ${c.kriter === b.c ? "selected" : ""}>${escapeHtml(b.c)}</option>`
         ).join("");
-        return `
+        const explicitZarf = normalizeZarfNo(c.zarfNo);
+        const tcTrim = String(c.tc || "").trim();
+        let tcMsg = validateTcNo(tcTrim);
+        if (!tcMsg && tcTrim && tcCounts[tcTrim] > 1) tcMsg = `Bu T.C. Kimlik No listede ${tcCounts[tcTrim]} kez geçiyor`;
+        if (tcMsg) tcIssueCount++;
+        const tcStyle = tcMsg ? "border-color:#dc2626; background:#fef2f2; color:#b91c1c; font-weight:700;" : "";
+        const zarfColor = ZARF_COLORS[groupKeys.indexOf(getCandZarfNo(c)) % ZARF_COLORS.length] || ZARF_COLORS[0];
+        const prevZarf = i > 0 ? getCandZarfNo(candidates[i - 1]) : null;
+        const groupHeader = (hasExplicitZarf && getCandZarfNo(c) !== prevZarf) ? `
+            <tr class="zarf-group-row">
+                <td colspan="14" style="background:${zarfColor.bg}; color:${zarfColor.fg}; font-weight:800; font-size:11.5px; padding:4px 8px; border-left:4px solid ${zarfColor.fg};">
+                    ✉️ Zarf / Grup No: ${escapeHtml(getCandZarfNo(c))} &nbsp;•&nbsp; ${groupCounts[getCandZarfNo(c)] || 0} Aday
+                </td>
+            </tr>` : "";
+        return `${groupHeader}
             <tr style="${c.selected ? 'background:#eff6ff;' : ''}">
                 <td style="text-align:center;">
                     <input type="checkbox" ${c.selected ? "checked" : ""} onchange="toggleSelectCandidate(${i}, this.checked); this.closest('tr').style.background = this.checked ? '#eff6ff' : '';" style="width:15px; height:15px; cursor:pointer;" />
                 </td>
                 <td style="text-align:center; font-weight:bold; color:#475569;">${i + 1}</td>
+                <td style="${hasExplicitZarf ? `border-left:4px solid ${zarfColor.fg};` : ''}">
+                    <input type="text" value="${escapeHtml(explicitZarf)}" placeholder="${escapeHtml(getDefaultZarfNo())}" title="${explicitZarf ? 'Zarf / Grup No: ' + escapeHtml(explicitZarf) : 'Boş: varsayılan Zarf No (' + escapeHtml(getDefaultZarfNo()) + ') kullanılır'}"
+                        style="width:58px; text-align:center; font-weight:800; ${explicitZarf ? `background:${zarfColor.bg}; color:${zarfColor.fg}; border-color:${zarfColor.fg};` : 'color:#94a3b8;'}"
+                        oninput="updateCand(${i}, 'zarfNo', this.value)" onchange="updateCandZarf(${i}, this.value)" />
+                </td>
                 <td><input type="text" value="${escapeHtml(c.adSoyad)}" oninput="updateCand(${i}, 'adSoyad', this.value)" /></td>
-                <td><input type="text" value="${escapeHtml(c.tc)}" maxlength="11" oninput="updateCand(${i}, 'tc', this.value)" /></td>
+                <td><input type="text" value="${escapeHtml(c.tc)}" maxlength="11" style="${tcStyle}" title="${escapeHtml(tcMsg || 'T.C. Kimlik No')}" oninput="updateCand(${i}, 'tc', this.value)" onchange="renderCandidateTable()" /></td>
                 <td><input type="text" value="${escapeHtml(c.tarih)}" placeholder="GG.AA.YYYY" oninput="updateCand(${i}, 'tarih', this.value)" /></td>
                 <td><input type="text" value="${escapeHtml(c.saat)}" placeholder="09:00" oninput="updateCand(${i}, 'saat', this.value)" /></td>
                 <td><input type="text" value="${escapeHtml(c.yer)}" oninput="updateCand(${i}, 'yer', this.value)" /></td>
@@ -2563,14 +2818,172 @@ function renderCandidateTable() {
             </tr>
         `;
     }).join("");
+    const tcWarnEl = document.getElementById("tcWarnInfo");
+    if (tcWarnEl) tcWarnEl.textContent = tcIssueCount ? `• ⚠️ ${tcIssueCount} adayda T.C. No sorunu (kırmızı kutulara bakın)` : "";
     updateSelectedCandBadge();
+    refreshZarfPaketOptions(groupKeys, groupCounts, hasExplicitZarf);
+    saveCandidatesToStorage();
+}
+// ================= ZARF / GRUP NO YARDIMCILARI =================
+const ZARF_COLORS = [
+    { bg: "#ede9fe", fg: "#6d28d9" },
+    { bg: "#dcfce7", fg: "#15803d" },
+    { bg: "#fef3c7", fg: "#b45309" },
+    { bg: "#dbeafe", fg: "#1d4ed8" },
+    { bg: "#fce7f3", fg: "#be185d" },
+    { bg: "#ccfbf1", fg: "#0f766e" },
+    { bg: "#fee2e2", fg: "#b91c1c" },
+    { bg: "#e0e7ff", fg: "#4338ca" }
+];
+function isZarfHeader(hu) {
+    return hu.includes("ZARF") || hu.includes("GRUP") || hu.includes("GRUB") || hu.includes("DOSYA NO");
+}
+function normalizeZarfNo(val) {
+    let s = String(val ?? "").trim();
+    // Excel sayısal hücreleri "2.0" / "2,0" gibi gelebilir
+    if (/^\d+[.,]0+$/.test(s)) s = s.replace(/[.,]0+$/, "");
+    return s;
+}
+function getDefaultZarfNo() {
+    return (document.getElementById("cfgZarfNo")?.value || "").trim() || "1";
+}
+function getCandZarfNo(c) {
+    return normalizeZarfNo(c?.zarfNo) || getDefaultZarfNo();
+}
+function compareZarfNo(a, b) {
+    return String(a).localeCompare(String(b), "tr", { numeric: true, sensitivity: "base" });
+}
+// Adayları zarf/grup numarasına göre gruplar (sıra: zarf no artan, grup içi liste sırası)
+function getZarfGroups() {
+    const map = new Map();
+    candidates.forEach(c => {
+        const k = getCandZarfNo(c);
+        if (!map.has(k)) map.set(k, []);
+        map.get(k).push(c);
+    });
+    if (!map.size) return [{ no: getDefaultZarfNo(), list: [] }];
+    return Array.from(map.keys()).sort(compareZarfNo).map(k => ({ no: k, list: map.get(k) }));
+}
+function updateCandZarf(index, val) {
+    if (!candidates[index]) return;
+    candidates[index].zarfNo = normalizeZarfNo(val);
+    renderCandidateTable();
+    renderPreview();
+}
+function applyZarfNoToSelected() {
+    const selected = candidates.filter(c => c.selected);
+    if (!selected.length) {
+        alert("Lütfen önce 'Sınava Girecek Aday Listesi' tablosunun en solundaki kutucuklardan zarf/grup numarası atanacak adayları seçin.");
+        return;
+    }
+    const no = getDefaultZarfNo();
+    selected.forEach(c => { c.zarfNo = no; });
+    renderCandidateTable();
+    renderPreview();
+}
+function stableSortCandidatesByZarf() {
+    candidates = candidates
+        .map((c, i) => ({ c, i }))
+        .sort((a, b) => compareZarfNo(getCandZarfNo(a.c), getCandZarfNo(b.c)) || a.i - b.i)
+        .map(x => x.c);
+}
+function sortCandidatesByZarf() {
+    if (!candidates.length) return;
+    stableSortCandidatesByZarf();
+    renderCandidateTable();
+    renderPreview();
+}
+// ================= EXCEL YARDIMCILARI =================
+function splitExcelLine(line) {
+    const l = String(line || "");
+    if (l.includes("\t")) return l.split("\t").map(c => c.trim());
+    if (l.includes("|")) return l.split("|").map(c => c.trim());
+    if (l.includes(";")) return l.split(";").map(c => c.trim());
+    return [l.trim()];
+}
+function isCandidateHeaderText(u) {
+    return u.includes("AD SOYAD") || u.includes("ADI SOYADI") || u.includes("ADI VE SOYADI") ||
+        u.includes("KİMLİK") || u.includes("ADAYIN ADI") || u.includes("TC NO") ||
+        (u.includes("ÖĞRENCİ") && (u.includes("ADI") || u.includes("NO")));
+}
+// ================= ADAY LİSTESİ KALICI KAYIT (localStorage) =================
+let candidatesStorageReady = false;
+function readStoredCandidates() {
+    try {
+        const raw = localStorage.getItem(STORAGE_KEYS.CANDIDATES);
+        if (!raw) return null;
+        const obj = JSON.parse(raw);
+        if (obj && Array.isArray(obj.list)) return obj;
+    } catch (e) {
+        console.warn("Kayıtlı aday listesi okunamadı:", e);
+    }
+    return null;
+}
+function saveCandidatesToStorage() {
+    if (!candidatesStorageReady) return;
+    try {
+        localStorage.setItem(STORAGE_KEYS.CANDIDATES, JSON.stringify({
+            savedAt: new Date().toISOString(),
+            branchId: document.getElementById("selBranch")?.value || "",
+            list: candidates
+        }));
+        const el = document.getElementById("candSaveInfo");
+        if (el) el.textContent = `💾 Otomatik kaydedildi (${new Date().toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" })})`;
+    } catch (e) {
+        const el = document.getElementById("candSaveInfo");
+        if (el) el.textContent = "⚠️ Liste tarayıcıya kaydedilemedi";
+    }
+}
+// ================= T.C. KİMLİK NO DOĞRULAMA =================
+function validateTcNo(tc) {
+    const s = String(tc || "").trim();
+    if (!s) return "";
+    if (!/^\d{11}$/.test(s)) return "T.C. Kimlik No 11 haneli ve yalnızca rakam olmalı";
+    if (s[0] === "0") return "T.C. Kimlik No 0 ile başlayamaz";
+    const d = s.split("").map(Number);
+    const odd = d[0] + d[2] + d[4] + d[6] + d[8];
+    const even = d[1] + d[3] + d[5] + d[7];
+    const d10 = ((odd * 7 - even) % 10 + 10) % 10;
+    const d11 = (d.slice(0, 10).reduce((a, b) => a + b, 0)) % 10;
+    if (d[9] !== d10 || d[10] !== d11) return "T.C. Kimlik No kontrol haneleri tutmuyor (yazım hatası olabilir)";
+    return "";
+}
+// ================= EVRAK PAKETİ: ZARF / GRUP SEÇİMİ =================
+function refreshZarfPaketOptions(groupKeys, groupCounts, hasExplicitZarf) {
+    const sel = document.getElementById("selZarfPaket");
+    const wrap = document.getElementById("zarfPaketWrap");
+    if (!sel) return;
+    const prev = sel.value || "__all";
+    const opts = [`<option value="__all">Tüm Adaylar (Tek Paket)</option>`];
+    if (hasExplicitZarf && groupKeys.length > 1) {
+        opts.push(`<option value="__each">Her Zarf / Grup İçin Ayrı Paket (${groupKeys.length} Paket)</option>`);
+    }
+    if (hasExplicitZarf) {
+        groupKeys.forEach(k => opts.push(`<option value="z:${escapeHtml(k)}">Sadece Zarf / Grup ${escapeHtml(k)} (${groupCounts[k]} Aday)</option>`));
+    }
+    sel.innerHTML = opts.join("");
+    const values = Array.from(sel.options).map(o => o.value);
+    sel.value = values.includes(prev) ? prev : "__all";
+    if (wrap) wrap.style.display = hasExplicitZarf ? "flex" : "none";
+}
+function onZarfPaketChange() {
+    renderPreview();
+}
+function withCandidates(list, fn) {
+    const saved = candidates;
+    candidates = list;
+    try {
+        return fn();
+    } finally {
+        candidates = saved;
+    }
 }
 let previewTimer = null;
 function updateCand(index, field, val) {
     if (!candidates[index]) return;
     candidates[index][field] = val;
     clearTimeout(previewTimer);
-    previewTimer = setTimeout(renderPreview, 120);
+    previewTimer = setTimeout(() => { renderPreview(); saveCandidatesToStorage(); }, 120);
 }
 function updateCandAlan(index, newAlan) {
     if (!candidates[index]) return;
@@ -2946,10 +3359,10 @@ function buildEvaluationPagesForCandidate(cand, candIdx) {
     }
     return pagesHtml;
 }
-// 2. SINAV SONUÇ TUTANAĞI (07094829_sinavsonuctutanagi.doc formatı — Çoklu A4 Sayfalama + İsteğe Bağlı 3. Değerlendirici)
+// 2. SINAV SONUÇ TUTANAĞI (yeni form.pdf Sayfa 3 Birebir Format — 20 Satır + Dikey Değerlendirici Başlıkları + Yatay İmza Tablosu)
 function buildSonucTutanagiPage() {
     if (!currentExam) return "";
-    const kurum = document.getElementById("cfgMerkez").value.trim();
+    const kurum = document.getElementById("cfgMerkez").value.trim() || "İMES SÜHEYL ERBOZ MESLEKİ EĞİTİM MERKEZİ";
     const yer = document.getElementById("cfgYer").value.trim() || kurum;
     const tarih = document.getElementById("cfgTarih").value.trim() || (candidates[0]?.tarih || "");
     const donem = document.getElementById("cfgDonem").value.trim();
@@ -2957,54 +3370,30 @@ function buildSonucTutanagiPage() {
     const deg1 = document.getElementById("cfgDeg1").value.trim() || (candidates[0]?.degerlendirici || "");
     const deg2 = document.getElementById("cfgDeg2").value.trim() || (candidates[0]?.degerlendirici2 || "");
     const deg3 = document.getElementById("cfgDeg3").value.trim();
-    const copies = parseInt(document.getElementById("cfgCopiesPerCandidate").value, 10) || 1;
-    const showDeg3 = Boolean(deg3) || copies === 3;
     const extraRows = Math.max(0, parseInt(document.getElementById("cfgExtraRows").value, 10) || 0);
-    const dalHeader = currentExam.am ? `${currentExam.dl} (${currentExam.am})` : currentExam.dl;
+    const rawDal = currentExam.am ? `${currentExam.dl} (${currentExam.am})` : currentExam.dl;
+    const dalHeader = /\bMESLEK DALI$/i.test(rawDal) ? rawDal : `${rawDal.replace(/\s*DALI$/i, "")} MESLEK DALI`;
+    const ROWS_PER_PAGE = 20;
+    const totalTargetRows = Math.max(ROWS_PER_PAGE, candidates.length + extraRows);
     const allRows = [];
-    candidates.forEach((c, idx) => {
+    for (let i = 0; i < totalTargetRows; i++) {
+        const c = candidates[i];
+        const nameCell = c
+            ? `${escapeHtml(c.adSoyad)}${c.tc ? ` <span style="color:#475569; font-size:8.5pt;">(${escapeHtml(c.tc)})</span>` : ""}`
+            : "&nbsp;";
         allRows.push(`
             <tr>
-                <td>${idx + 1}</td>
-                <td class="left">${escapeHtml(c.adSoyad)}${c.tc ? ` <span style="color:#475569; font-size:8.5pt;">(${escapeHtml(c.tc)})</span>` : ""}</td>
-                <td></td>
-                <td></td>
-                ${showDeg3 ? "<td></td>" : ""}
+                <td>${i + 1}.</td>
+                <td class="left">${nameCell}</td>
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>
-        `);
-    });
-    for (let i = 0; i < extraRows; i++) {
-        allRows.push(`
-            <tr>
-                <td>${candidates.length + i + 1}</td>
-                <td class="left">&nbsp;</td>
-                <td></td>
-                <td></td>
-                ${showDeg3 ? "<td></td>" : ""}
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
         `);
     }
-    if (!allRows.length) {
-        allRows.push(`
-            <tr>
-                <td>1</td>
-                <td class="left">&nbsp;</td>
-                <td></td>
-                <td></td>
-                ${showDeg3 ? "<td></td>" : ""}
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        `);
-    }
-    const ROWS_PER_PAGE = 25;
     const chunks = [];
     for (let i = 0; i < allRows.length; i += ROWS_PER_PAGE) {
         chunks.push(allRows.slice(i, i + ROWS_PER_PAGE));
@@ -3012,103 +3401,111 @@ function buildSonucTutanagiPage() {
     return chunks.map((chunkRows) => `
         <div class="a4-page">
             <div class="a4-content">
-                <div class="meb-header">
+                <div class="meb-header" style="margin-bottom:6px;">
                     <img src="${MEB_LOGO_DATA_URI}" class="meb-logo" alt="MEB Logo" />
                     <div class="meb-titles">
                         <h2>T.C.</h2>
                         <h2>MİLLÎ EĞİTİM BAKANLIĞI</h2>
                         <h3>MESLEKİ VE TEKNİK EĞİTİM GENEL MÜDÜRLÜĞÜ</h3>
-                        <h3>${escapeHtml(upTr(kurum))}</h3>
-                        <h4>(${escapeHtml(currentExam.sv)} Beceri Sınavı Sonuç Tutanağı)</h4>
+                        <h4>(Kalfalık/Ustalık Beceri Sınavı Sonuç Tutanağı)</h4>
                     </div>
                     <div></div>
                 </div>
-                <table class="meta-table">
+                <table class="tutanak-table">
                     <tbody>
                         <tr>
-                            <td style="width:52%;"><span class="meta-label">MESLEK DALI:</span> ${escapeHtml(dalHeader)}</td>
-                            <td style="width:48%;"><span class="meta-label">Sınav Süresi:</span> ${escapeHtml(sure)}</td>
+                            <td colspan="8" style="padding:8px 10px; text-align:center; font-weight:bold; font-size:10.5pt; line-height:1.6;">
+                                <div>${escapeHtml(upTr(kurum))}</div>
+                                <div>${escapeHtml(dalHeader)}</div>
+                            </td>
                         </tr>
                         <tr>
-                            <td><span class="meta-label">Sınav Tarihi:</span> ${escapeHtml(tarih)}</td>
-                            <td rowspan="2"><span class="meta-label">Beceri Sınav Merkezi:</span> ${escapeHtml(yer)}</td>
+                            <td colspan="2" class="left" style="font-weight:bold; width:28%;">Sınav Tarihi</td>
+                            <td colspan="6" class="left"><b>:</b> &nbsp; ${escapeHtml(tarih)}</td>
                         </tr>
                         <tr>
-                            <td><span class="meta-label">Sınav Dönemi:</span> ${escapeHtml(donem)}</td>
+                            <td colspan="2" class="left" style="font-weight:bold;">Sınav Dönemi</td>
+                            <td colspan="6" class="left"><b>:</b> &nbsp; ${escapeHtml(donem)}</td>
                         </tr>
-                    </tbody>
-                </table>
-                <table class="tutanak-table">
-                    <thead>
+                        <tr>
+                            <td colspan="2" class="left" style="font-weight:bold;">Sınav Süresi</td>
+                            <td colspan="6" class="left"><b>:</b> &nbsp; ${escapeHtml(sure)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="left" style="font-weight:bold;">Beceri Sınav Merkezi</td>
+                            <td colspan="6" class="left"><b>:</b> &nbsp; ${escapeHtml(yer)}</td>
+                        </tr>
                         <tr>
                             <th colspan="2">ADAY BİLGİLERİ</th>
-                            <th colspan="${showDeg3 ? 3 : 2}">VERİLEN PUANLAR VE ORTALAMASI*</th>
-                            <th colspan="2">SINAV PUANI</th>
-                            <th rowspan="2" style="width:88px;">**BAŞARILI /<br/>BAŞARISIZ</th>
+                            <th colspan="6">VERİLEN PUANLAR VE ORTALAMASI*</th>
                         </tr>
                         <tr>
-                            <th style="width:42px;">SIRA<br/>NO</th>
-                            <th>ADAYIN ADI SOYADI</th>
-                            <th style="width:84px;">1. Değerlendirici</th>
-                            <th style="width:84px;">2. Değerlendirici</th>
-                            ${showDeg3 ? `<th style="width:84px;">3. Değerlendirici</th>` : ""}
-                            <th style="width:65px;">RAKAMLA</th>
-                            <th style="width:85px;">YAZIYLA</th>
+                            <th rowspan="2" style="width:42px;">SIRA<br/>NO</th>
+                            <th rowspan="2">ADAYIN ADI SOYADI</th>
+                            <th rowspan="2" class="vert-th">1. Değerlendirici</th>
+                            <th rowspan="2" class="vert-th">2. Değerlendirici</th>
+                            <th rowspan="2" class="vert-th">3. Değerlendirici</th>
+                            <th colspan="2">SINAV PUANI</th>
+                            <th rowspan="2" style="width:88px; font-size:8pt;">**BAŞARILI/<br/>BAŞARISIZ</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                        <tr>
+                            <th style="width:65px; font-size:8pt;">RAKAMLA</th>
+                            <th style="width:78px; font-size:8pt;">YAZIYLA</th>
+                        </tr>
                         ${chunkRows.join("")}
+                        <tr>
+                            <th colspan="8" style="text-align:center; font-size:9.5pt;">DEĞERLENDİRİCİ ADI SOYADI İMZASI</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="width:150px;">&nbsp;</th>
+                            <th colspan="3">Adı Soyadı</th>
+                            <th colspan="3">İmzası</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="left" style="font-weight:bold;">1. Değerlendirici</td>
+                            <td colspan="3" class="left">${escapeHtml(deg1)}</td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="left" style="font-weight:bold;">2. Değerlendirici</td>
+                            <td colspan="3" class="left">${escapeHtml(deg2)}</td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="left" style="font-weight:bold;">3. Değerlendirici</td>
+                            <td colspan="3" class="left">${escapeHtml(deg3)}</td>
+                            <td colspan="3"></td>
+                        </tr>
                     </tbody>
                 </table>
-                <div class="post-c-block" style="margin-top:12px;">
-                    <table class="tutanak-table">
-                        <thead>
-                            <tr>
-                                <th style="width:140px;">DEĞERLENDİRİCİ ADI SOYADI İMZASI</th>
-                                <th>1. Değerlendirici</th>
-                                <th>2. Değerlendirici</th>
-                                ${showDeg3 ? `<th>3. Değerlendirici</th>` : ""}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="font-weight:bold;">Adı Soyadı</td>
-                                <td>${escapeHtml(deg1)}</td>
-                                <td>${escapeHtml(deg2)}</td>
-                                ${showDeg3 ? `<td>${escapeHtml(deg3)}</td>` : ""}
-                            </tr>
-                            <tr>
-                                <td style="font-weight:bold; height:42px;">İmzası</td>
-                                <td></td>
-                                <td></td>
-                                ${showDeg3 ? `<td></td>` : ""}
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="footnote-text" style="margin-top:8px;">
-                        *En az 2 Değerlendirici olması gerekir. Değerlendiricilerin verdiği puanların aritmetik ortalaması adayın sınav sonuç notudur.<br/>
-                        **Kritik becerilerden başarılı olmak kaydıyla toplam 50 puan ve üzeri alanlar <b>BAŞARILI</b> sayılırlar.
-                    </div>
+                <div class="footnote-text" style="margin-top:8px; text-align:center;">
+                    *En az 2 Değerlendirici olması gerekir. Değerlendiricilerin verdiği puanların aritmetik ortalaması adayın sınav sonuç notudur<br/>
+                    **Kritik becerilerden başarılı olmak kaydıyla toplam 50 puan ve üzeri alanlar <b>BAŞARILI</b> sayılırlar.
                 </div>
             </div>
         </div>
     `).join("");
 }
-// 3. SINAV TUTANAĞI (07094845_sinavtutanagi.doc Ek-1 formatı)
-// 4. üye kaldırıldı; 3. değerlendirici ise yalnızca doldurulduğunda tutanakta görünür!
+// 3. SINAV TUTANAĞI (yeni form.pdf Sayfa 2 Birebir Format — Sol Üst MEB Logolu, Tablo Altı Madde ve İmza Düzeni)
 function buildSinavTutanagiPage() {
     if (!currentExam) return "";
-    const kurum = document.getElementById("cfgMerkez").value.trim();
-    const ogretimYili = document.getElementById("cfgOgretimYili").value.trim() || "....... / .......";
-    const donem = document.getElementById("cfgDonem").value.trim() || "........................";
-    const tarih = document.getElementById("cfgTarih").value.trim() || (candidates[0]?.tarih || ".... / .... / 202...");
-    const dersAdi = document.getElementById("cfgDersAdi").value.trim() || "BECERİ / UYGULAMA SINAVI";
-    const toplanmaSaat = document.getElementById("cfgToplanmaSaat").value.trim();
-    const hazirlikSaat = document.getElementById("cfgHazirlikSaat").value.trim();
-    const baslamaSaat = document.getElementById("cfgSaat").value.trim();
-    const bitisSaat = document.getElementById("cfgBitisSaat").value.trim();
-    const degTarihSaat = document.getElementById("cfgDegerlendirmeTarihSaat").value.trim();
+    const kurumRaw = document.getElementById("cfgMerkez").value.trim() || "İMES SÜHEYL ERBOZ MESLEKİ EĞİTİM MERKEZİ";
+    const kurumTitle = /MÜDÜRLÜĞÜ$/i.test(kurumRaw) ? upTr(kurumRaw) : `${upTr(kurumRaw)} MÜDÜRLÜĞÜ`;
+    const ogretimYili = document.getElementById("cfgOgretimYili").value.trim() || "2026 / 2027";
+    const donem = document.getElementById("cfgDonem").value.trim() || "";
+    const tarih = document.getElementById("cfgTarih").value.trim() || (candidates[0]?.tarih || "");
+    const rawDal = currentExam.am ? `${currentExam.dl} (${currentExam.am})` : currentExam.dl;
+    const cleanDal = rawDal.replace(/\s*DALI$/i, "").trim();
+    const cleanAlan = currentExam.al.replace(/\s*ALANI$/i, "").trim();
+    const customDers = document.getElementById("cfgDersAdi").value.trim();
+    const dersAdi = customDers || cleanDal;
+    const toplanmaSaat = document.getElementById("cfgToplanmaSaat").value.trim() || "08:00";
+    const hazirlikSaat = document.getElementById("cfgHazirlikSaat").value.trim() || "08:30";
+    const baslamaSaat = document.getElementById("cfgSaat").value.trim() || "09:00";
+    const bitisSaat = document.getElementById("cfgBitisSaat").value.trim() || "11:00";
+    const degTarihSaat = document.getElementById("cfgDegerlendirmeTarihSaat").value.trim() || tarih;
     const toplamOgrenci = candidates.length ? String(candidates.length) : "";
+    const kagitSayisi = document.getElementById("cfgKagitSayisi")?.value.trim() || toplamOgrenci;
     const katilan = document.getElementById("cfgKatilanSayisi").value.trim();
     const katilmayan = document.getElementById("cfgKatilmayanSayisi").value.trim();
     const basarili = document.getElementById("cfgBasariliSayisi").value.trim();
@@ -3117,17 +3514,15 @@ function buildSinavTutanagiPage() {
     const uye1 = document.getElementById("cfgDeg1").value.trim() || (candidates[0]?.degerlendirici || "");
     const uye2 = document.getElementById("cfgDeg2").value.trim() || (candidates[0]?.degerlendirici2 || "");
     const uye3 = document.getElementById("cfgDeg3").value.trim();
-    const dalHeader = currentExam.am ? `${currentExam.dl} (${currentExam.am})` : currentExam.dl;
-    // 3. Değerlendirici yalnızca girildiyse imza bloğuna eklenir
     const uye3CellHtml = uye3
-        ? `<td><b>Üye</b><br/>${escapeHtml(uye3)}</td>`
+        ? `<td><div>${escapeHtml(uye3)}</div><div style="margin-top:2px;">ÜYE</div></td>`
         : "";
     const sigBlockHtml = `
         <table class="sig-grid-dynamic">
             <tr>
-                <td><b>Sınav Kom. Bşk.</b><br/>${escapeHtml(baskan || ".........................")}<br/><span style="font-size:8pt;">Okul/Kurum Müdürü</span></td>
-                <td><b>Üye</b><br/>${escapeHtml(uye1 || ".........................")}</td>
-                <td><b>Üye</b><br/>${escapeHtml(uye2 || ".........................")}</td>
+                <td><div>${escapeHtml(baskan)}</div><div style="margin-top:2px;">Sınav Kom. Bşk.</div></td>
+                <td><div>${escapeHtml(uye1)}</div><div style="margin-top:2px;">ÜYE</div></td>
+                <td><div>${escapeHtml(uye2)}</div><div style="margin-top:2px;">ÜYE</div></td>
                 ${uye3CellHtml}
             </tr>
         </table>
@@ -3135,218 +3530,595 @@ function buildSinavTutanagiPage() {
     return `
         <div class="a4-page">
             <div class="a4-content">
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-                    <div style="width:45px;"></div>
-                    <div style="text-align:center; flex:1;">
-                        <h2 style="font-size:12pt; font-weight:bold; text-transform:uppercase;">${escapeHtml(kurum)}</h2>
-                        <h3 style="font-size:11.5pt; font-weight:bold; margin-top:2px;">SINAV TUTANAĞI</h3>
+                <div class="meb-header" style="margin-bottom:10px;">
+                    <img src="${MEB_LOGO_DATA_URI}" class="meb-logo" alt="MEB Logo" />
+                    <div class="meb-titles">
+                        <h2 style="font-size:11.5pt;">${escapeHtml(kurumTitle)}</h2>
+                        <h2 style="font-size:13pt; margin-top:4px;">SINAV TUTANAĞI</h2>
                     </div>
-                    <div style="width:45px; text-align:right; font-weight:bold; font-size:10pt;">Ek-1</div>
+                    <div></div>
                 </div>
-                <table class="meta-table" style="margin-bottom:10px;">
+                <table style="width:100%; border-collapse:collapse; font-size:9.8pt; margin-bottom:12px;">
                     <tbody>
                         <tr>
-                            <td style="width:48%;"><span class="meta-label">ÖĞRETİM YILI :</span> ${escapeHtml(ogretimYili)}</td>
-                            <td style="width:52%;"><span class="meta-label">SINAV SEVİYESİ :</span> ${escapeHtml(upTr(currentExam.sv))}</td>
+                            <td style="width:16%; padding:3px 0;">ÖĞRETİM YILI</td>
+                            <td style="width:3%; padding:3px 0;">:</td>
+                            <td style="width:28%; padding:3px 0;">${escapeHtml(ogretimYili)}</td>
+                            <td style="width:17%; padding:3px 0;">SINAV SEVİYESİ</td>
+                            <td style="width:3%; padding:3px 0;">:</td>
+                            <td style="width:33%; padding:3px 0;">${escapeHtml(upTr(currentExam.sv))}</td>
                         </tr>
                         <tr>
-                            <td><span class="meta-label">SINAV DÖNEMİ :</span> ${escapeHtml(donem)}</td>
-                            <td><span class="meta-label">MESLEK DALI :</span> ${escapeHtml(dalHeader)}</td>
+                            <td style="padding:3px 0;">SINAV DÖNEMİ</td>
+                            <td style="padding:3px 0;">:</td>
+                            <td style="padding:3px 0;">${escapeHtml(donem)}</td>
+                            <td style="padding:3px 0;">MESLEK DALI</td>
+                            <td style="padding:3px 0;">:</td>
+                            <td style="padding:3px 0;">${escapeHtml(cleanAlan)}</td>
                         </tr>
                         <tr>
-                            <td><span class="meta-label">SINAV TARİHİ :</span> ${escapeHtml(tarih)}</td>
-                            <td><span class="meta-label">DERSİN ADI :</span> ${escapeHtml(dersAdi)}</td>
+                            <td style="padding:3px 0;">SINAV TARİHİ</td>
+                            <td style="padding:3px 0;">:</td>
+                            <td style="padding:3px 0;">${escapeHtml(tarih)}</td>
+                            <td style="padding:3px 0;">DERSİN ADI</td>
+                            <td style="padding:3px 0;">:</td>
+                            <td style="padding:3px 0;">${escapeHtml(dersAdi)}</td>
                         </tr>
                     </tbody>
                 </table>
                 <!-- 1. BÖLÜM: SINAV HAZIRLIĞI -->
-                <div class="ek1-box">
+                <div class="ek1-section">
                     <table class="ek1-table">
                         <tbody>
                             <tr>
-                                <td rowspan="3" class="ek1-side-title">SINAV<br/>HAZIRLIĞI</td>
-                                <td style="width:62%;">Sınav Komisyonunun Toplandığı Saat</td>
-                                <td>${escapeHtml(toplanmaSaat)}</td>
+                                <td rowspan="2" class="ek1-side-title">SINAV HAZIRLIĞI</td>
+                                <td style="width:55%;">Sınav Komisyonunun Toplandığı Saat</td>
+                                <td style="text-align:center;">${escapeHtml(toplanmaSaat)}</td>
                             </tr>
                             <tr>
-                                <td>Soruların ve Cevap Anahtarının Hazırlanarak Sınava Başlama Durumuna Gelindiği Saat</td>
-                                <td>${escapeHtml(hazirlikSaat)}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="padding:8px 10px;">
-                                    <div style="font-size:9.3pt; line-height:1.35;">
-                                        1- Sınav Komisyonu, Okul/Kurum Müdürünün başkanlığında toplanarak sınav sorularını ve cevap anahtarını hazırlamıştır.<br/>
-                                        2- Sınav soruları ve cevap anahtarı imzalanıp onaylandıktan sonra bir nüshaları sınav komisyon başkanlığına teslim edilmiştir.
-                                    </div>
-                                    ${sigBlockHtml}
-                                </td>
+                                <td>Soruların ve Cevap Anahtarının Hazırlanarak Sınava<br/>Başlama Durumuna Gelindiği Saat</td>
+                                <td style="text-align:center;">${escapeHtml(hazirlikSaat)}</td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="ek1-notes">
+                        1- Sınav Komisyonu Okul/Kurum Müdürünün başkanlığında toplanarak sınav sorularını ve cevap anahtarını hazırlamıştır.<br/>
+                        2- Sınav soruları ve cevap anahtarı imzalanıp onaylandıktan sonra birinci nüshaları sınav komisyon başkanlarına teslim edilmiştir.
+                    </div>
+                    ${sigBlockHtml}
                 </div>
                 <!-- 2. BÖLÜM: SINAV BAŞLAMA, KATILMA VE SINAV BİLGİLERİ -->
-                <div class="ek1-box">
+                <div class="ek1-section">
                     <table class="ek1-table">
                         <tbody>
                             <tr>
-                                <td rowspan="7" class="ek1-side-title">Sınav;<br/>Başlama,<br/>Katılma ve<br/>Sınav Bilgileri</td>
-                                <td style="width:62%;">Sınavın Başladığı Saat</td>
-                                <td>${escapeHtml(baslamaSaat)}</td>
+                                <td rowspan="6" class="ek1-side-title">SINAV;<br/>BAŞLAMA,<br/>KATILMA VE SINAV<br/>BİLGİLERİ</td>
+                                <td style="width:55%;">Sınavın Başladığı Saat</td>
+                                <td style="text-align:center;">${escapeHtml(baslamaSaat)}</td>
                             </tr>
                             <tr>
                                 <td>Sınava Katılan Öğrenci Sayısı</td>
-                                <td>${escapeHtml(katilan)}</td>
+                                <td style="text-align:center;">${escapeHtml(katilan)}</td>
                             </tr>
                             <tr>
                                 <td>Sınava Katılmayan Öğrenci Sayısı</td>
-                                <td>${escapeHtml(katilmayan)}</td>
+                                <td style="text-align:center;">${escapeHtml(katilmayan)}</td>
                             </tr>
                             <tr>
                                 <td>Toplam Öğrenci Sayısı</td>
-                                <td>${escapeHtml(toplamOgrenci)}</td>
+                                <td style="text-align:center;">${escapeHtml(toplamOgrenci)}</td>
                             </tr>
                             <tr>
-                                <td>Sınavda Kullanılan Kağıt Sayısı</td>
-                                <td></td>
+                                <td>Kullanılan Sınav Kağıdı Sayısı</td>
+                                <td style="text-align:center;">${escapeHtml(kagitSayisi)}</td>
                             </tr>
                             <tr>
                                 <td>Sınavın Sona Erdiği Saat</td>
-                                <td>${escapeHtml(bitisSaat)}</td>
+                                <td style="text-align:center;">${escapeHtml(bitisSaat)}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    ${sigBlockHtml}
+                </div>
+                <!-- 3. BÖLÜM: DEĞERLENDİRME -->
+                <div class="ek1-section">
+                    <table class="ek1-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="4" class="ek1-side-title">DEĞERLENDİRME</td>
+                                <td style="width:55%;">Değerlendirmenin Yapıldığı Tarih ve Saat</td>
+                                <td style="text-align:center;">${escapeHtml(degTarihSaat)}</td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="padding:8px 10px;">
-                                    ${sigBlockHtml}
-                                </td>
+                                <td>Başarılı Öğrenci Sayısı</td>
+                                <td style="text-align:center;">${escapeHtml(basarili)}</td>
+                            </tr>
+                            <tr>
+                                <td>Başarısız Öğrenci Sayısı</td>
+                                <td style="text-align:center;">${escapeHtml(basarisiz)}</td>
+                            </tr>
+                            <tr>
+                                <td>Toplam Öğrenci Sayısı</td>
+                                <td style="text-align:center;">${escapeHtml(toplamOgrenci)}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ek1-notes">
+                        1- Sınav Kağıtlarının Değerlendirmesi Tamamlanmıştır.<br/>
+                        2- Sınav Evrakları Komisyon Huzurunda Okul/Kurum Müdürlüğüne Teslim Edilmiştir.
+                    </div>
+                    ${sigBlockHtml}
+                </div>
+            </div>
+        </div>
+    `;
+}
+// 4. SINAV EVRAKI ZARFI / DOSYA ÜST YAZISI (yeni form.pdf Sayfa 1 Tam Sayfa Zarf Formatı + Merkeze Ortalı Başlık Seçeneği + 2'li Zarf Seçeneği)
+// Zarf/Grup No'ya göre her grup için ayrı zarf sayfası üretir
+function buildZarfUstYazisiPage() {
+    if (!currentExam) return "";
+    return getZarfGroups().map(g => buildZarfUstYazisiPageFor(g.no, g.list)).join("");
+}
+function buildZarfUstYazisiPageFor(zarfNoParam, groupCands) {
+    if (!currentExam) return "";
+    const zarfCands = Array.isArray(groupCands) ? groupCands : candidates;
+    const zarfTipi = document.getElementById("cfgZarfTipi")?.value || "yeni_ortali";
+    const kurumRaw = document.getElementById("cfgMerkez").value.trim() || "İMES Süheyl ERBOZ Mesleki Eğitim Merkezi";
+    const kurumUp = upTr(kurumRaw);
+    const valilik = document.getElementById("cfgValilik")?.value.trim() || "İSTANBUL VALİLİĞİ";
+    const zarfNo = String(zarfNoParam || "").trim() || getDefaultZarfNo();
+    const ogretimYili = document.getElementById("cfgOgretimYili").value.trim() || "2026 / 2027";
+    const donemRaw = upTr(document.getElementById("cfgDonem").value.trim() || "EYLÜL");
+    const donemClean = donemRaw.replace(/\s*DÖNEMİ$/i, "").trim();
+    const tarih = document.getElementById("cfgTarih").value.trim() || (zarfCands[0]?.tarih || "");
+    const baslamaSaat = document.getElementById("cfgSaat").value.trim() || "09:00";
+    const toplanmaSaat = document.getElementById("cfgToplanmaSaat").value.trim() || "08:00";
+    const rawDal = currentExam.am ? `${currentExam.dl} (${currentExam.am})` : currentExam.dl;
+    const cleanDal = rawDal.replace(/\s*DALI$/i, "").trim();
+    const cleanAlan = currentExam.al.replace(/\s*ALANI$/i, "").trim();
+    const customDers = document.getElementById("cfgDersAdi").value.trim();
+    const dersAdi = customDers || cleanDal;
+    const incelemeTarih = document.getElementById("cfgDegerlendirmeTarihSaat").value.trim() || tarih;
+    const teslimTarih = document.getElementById("cfgTeslimTarihi")?.value.trim() || tarih;
+    const toplamOgrenci = zarfCands.length ? String(zarfCands.length) : "1";
+    const kagitSayisi = document.getElementById("cfgKagitSayisi")?.value.trim() || toplamOgrenci;
+    const katilan = document.getElementById("cfgKatilanSayisi").value.trim() || ".....................................";
+    const katilmayan = document.getElementById("cfgKatilmayanSayisi").value.trim() || "";
+    const basarili = document.getElementById("cfgBasariliSayisi").value.trim() || ".....................................";
+    const basarisiz = document.getElementById("cfgBasarisizSayisi").value.trim() || ".....................................";
+    const baskan = document.getElementById("cfgBaskan").value.trim();
+    const uye1 = document.getElementById("cfgDeg1").value.trim() || (zarfCands[0]?.degerlendirici || "");
+    const uye2 = document.getElementById("cfgDeg2").value.trim() || (zarfCands[0]?.degerlendirici2 || "");
+    const uye3 = document.getElementById("cfgDeg3").value.trim();
+    const alanLine = upTr(currentExam.al).endsWith("ALANI") ? upTr(currentExam.al) : `${upTr(currentExam.al)} ALANI`;
+    const dalLine = upTr(rawDal).endsWith("DALI") ? upTr(rawDal) : `${upTr(rawDal)} DALI`;
+    const uye3SigHtml = uye3
+        ? `<td><b>${escapeHtml(uye3)}</b><br/><div style="margin-top:18px;">Üye</div></td>`
+        : "";
+    if (zarfTipi === "ikili") {
+        const singleLabelHtml = `
+            <div class="envelope-half">
+                <div>
+                    <div class="zarf-header-centered">
+                        <div>T.C.</div>
+                        <div>MİLLÎ EĞİTİM BAKANLIĞI</div>
+                        <div>${escapeHtml(kurumUp)}</div>
+                        <div>${escapeHtml(ogretimYili)} EĞİTİM-ÖĞRETİM YILI ${escapeHtml(donemClean)} DÖNEMİ ${escapeHtml(upTr(currentExam.sv))} SINAVLARI</div>
+                        <div>${escapeHtml(alanLine)}</div>
+                        <div>${escapeHtml(dalLine)}</div>
+                    </div>
+                    <table class="zarf-info-table">
+                        <tbody>
+                            <tr>
+                                <td class="z-lbl">ZARF / GRUP NO</td>
+                                <td style="font-weight:bold;">${escapeHtml(zarfNo)}</td>
+                            </tr>
+                            <tr>
+                                <td class="z-lbl">DERSİN ADI / SINAV TÜRÜ</td>
+                                <td style="font-weight:bold;">${escapeHtml(dersAdi)}</td>
+                            </tr>
+                            <tr>
+                                <td class="z-lbl">SINAV BAŞLAMA SAATİ</td>
+                                <td>${escapeHtml(baslamaSaat)}</td>
+                            </tr>
+                            <tr>
+                                <td class="z-lbl">SINAVA KATILAN ÖĞRENCİ SAYISI</td>
+                                <td>${escapeHtml(document.getElementById("cfgKatilanSayisi").value.trim())}</td>
+                            </tr>
+                            <tr>
+                                <td class="z-lbl">SINAVA KATILMAYAN ÖĞRENCİ SAYISI</td>
+                                <td>${escapeHtml(katilmayan)}</td>
+                            </tr>
+                            <tr>
+                                <td class="z-lbl">TOPLAM ÖĞRENCİ SAYISI</td>
+                                <td>${escapeHtml(toplamOgrenci)}</td>
+                            </tr>
+                            <tr>
+                                <td class="z-lbl">BAŞARILI OLAN ÖĞRENCİ SAYISI</td>
+                                <td>${escapeHtml(document.getElementById("cfgBasariliSayisi").value.trim())}</td>
+                            </tr>
+                            <tr>
+                                <td class="z-lbl">BAŞARISIZ OLAN ÖĞRENCİ SAYISI</td>
+                                <td>${escapeHtml(document.getElementById("cfgBasarisizSayisi").value.trim())}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-top:7px; font-weight:bold; font-size:9.5pt;">
+                        İNCELEMENİN YAPILDIĞI TARİH – SAAT : &nbsp; ${escapeHtml(incelemeTarih)}
+                    </div>
+                </div>
+                <table class="sig-grid-dynamic" style="margin-top:4px;">
+                    <tr>
+                        <td><b>${escapeHtml(baskan)}</b><br/>Sınav Kom. Başkanı</td>
+                        <td><b>${escapeHtml(uye1)}</b><br/>Üye</td>
+                        <td><b>${escapeHtml(uye2)}</b><br/>Üye</td>
+                        ${uye3 ? `<td><b>${escapeHtml(uye3)}</b><br/>Üye</td>` : ""}
+                    </tr>
+                </table>
+            </div>
+        `;
+        return `
+            <div class="a4-page">
+                <div class="a4-content" style="justify-content:space-between;">
+                    ${singleLabelHtml}
+                    <div class="cut-divider"></div>
+                    ${singleLabelHtml}
+                </div>
+            </div>
+        `;
+    }
+    const topHeaderBlock = zarfTipi === "yeni_valilik"
+        ? `
+            <div style="text-align:center; font-family:'Times New Roman', Times, serif;">
+                <div style="font-size:15pt; font-weight:bold;">T.C.</div>
+                <div style="font-size:15pt; font-weight:bold; margin-top:2px;">${escapeHtml(valilik)}</div>
+                <div style="font-size:14.5pt; font-weight:bold; margin-top:2px;">${escapeHtml(kurumRaw)}</div>
+            </div>
+        `
+        : `
+            <div class="zarf-header-centered" style="font-family:'Times New Roman', Times, serif; font-size:12pt; border-bottom:none; margin-bottom:2px;">
+                <div>T.C.</div>
+                <div>MİLLÎ EĞİTİM BAKANLIĞI</div>
+                <div>${escapeHtml(kurumUp)}</div>
+                <div>${escapeHtml(ogretimYili)} EĞİTİM-ÖĞRETİM YILI ${escapeHtml(donemClean)} DÖNEMİ ${escapeHtml(upTr(currentExam.sv))} SINAVLARI</div>
+                <div>${escapeHtml(alanLine)}</div>
+                <div>${escapeHtml(dalLine)}</div>
+            </div>
+        `;
+    const candNamesHtml = zarfCands.map(c => `<div style="margin:1px 0;">${escapeHtml(c.adSoyad)}</div>`).join("");
+    return `
+        <div class="a4-page">
+            <div class="a4-content zarf-full-page">
+                <div>
+                    ${topHeaderBlock}
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin:14px 0 18px 0; font-family:'Times New Roman', Times, serif;">
+                        <div style="width:45px; font-size:13pt; font-weight:bold;">${escapeHtml(zarfNo)}</div>
+                        <div style="flex:1; text-align:center; font-size:15pt; font-weight:bold; letter-spacing:0.5px;">
+                            ${escapeHtml(upTr(currentExam.sv))} &nbsp; SINAV EVRAKI ZARFI
+                        </div>
+                        <div style="width:45px;"></div>
+                    </div>
+                    <table class="zarf-kv-table">
+                        <tbody>
+                            <tr>
+                                <td class="lbl">Öğretim Yılı</td>
+                                <td class="sep">:</td>
+                                <td style="width:28%;">${escapeHtml(ogretimYili)}</td>
+                                <td class="lbl">Sınav Tarihi</td>
+                                <td class="sep">:</td>
+                                <td>${escapeHtml(tarih)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Sınav Dönemi</td>
+                                <td class="sep">:</td>
+                                <td>${escapeHtml(donemClean)}</td>
+                                <td class="lbl">Sınav Saati</td>
+                                <td class="sep">:</td>
+                                <td>${escapeHtml(baslamaSaat)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Sınav Türü</td>
+                                <td class="sep">:</td>
+                                <td>${escapeHtml(upTr(currentExam.sv))}</td>
+                                <td class="lbl">Dersin Adı</td>
+                                <td class="sep">:</td>
+                                <td>${escapeHtml(dersAdi)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Meslek Dalı</td>
+                                <td class="sep">:</td>
+                                <td colspan="4">${escapeHtml(cleanAlan)}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="text-align:right; font-size:8.8pt; margin-top:8px; min-height:28px; padding-right:10px;">
+                        ${candNamesHtml}
+                    </div>
+                    <table class="zarf-mid-table">
+                        <tbody>
+                            <tr>
+                                <td class="lbl">Komisyonun Toplandığı Tarih Ve Saat</td>
+                                <td class="sep">:</td>
+                                <td style="width:140px;">${escapeHtml(tarih)}</td>
+                                <td>${escapeHtml(toplanmaSaat)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Sınava Girmesi Gereken Öğrenci Sayısı</td>
+                                <td class="sep">:</td>
+                                <td colspan="2">${escapeHtml(toplamOgrenci)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Sınava Katılan Öğrenci Sayısı</td>
+                                <td class="sep">:</td>
+                                <td colspan="2">${escapeHtml(katilan)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Kullanılan Sınav Kağıdı Sayısı</td>
+                                <td class="sep">:</td>
+                                <td colspan="2">${escapeHtml(kagitSayisi)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Başarılı Öğrenci Sayısı</td>
+                                <td class="sep">:</td>
+                                <td colspan="2">${escapeHtml(basarili)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Başarısız Öğrenci Sayısı</td>
+                                <td class="sep">:</td>
+                                <td colspan="2">${escapeHtml(basarisiz)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">İnceleme Tarihi</td>
+                                <td class="sep">:</td>
+                                <td colspan="2">${escapeHtml(incelemeTarih)}</td>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Evrak Teslim Tarihi</td>
+                                <td class="sep">:</td>
+                                <td colspan="2">${escapeHtml(teslimTarih)}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <!-- 3. BÖLÜM: DEĞERLENDİRME -->
-                <div class="ek1-box">
-                    <table class="ek1-table">
-                        <tbody>
-                            <tr>
-                                <td rowspan="5" class="ek1-side-title">DEĞERLENDİRME</td>
-                                <td style="width:62%;">Değerlendirmenin Yapıldığı Tarih ve Saat</td>
-                                <td>${escapeHtml(degTarihSaat || tarih)}</td>
-                            </tr>
-                            <tr>
-                                <td>Başarılı Öğrenci Sayısı</td>
-                                <td>${escapeHtml(basarili)}</td>
-                            </tr>
-                            <tr>
-                                <td>Başarısız Öğrenci Sayısı</td>
-                                <td>${escapeHtml(basarisiz)}</td>
-                            </tr>
-                            <tr>
-                                <td>Toplam Öğrenci Sayısı</td>
-                                <td>${escapeHtml(toplamOgrenci)}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="padding:8px 10px;">
-                                    <div style="font-size:9.3pt; line-height:1.35;">
-                                        1- Sınav Kağıtlarının Değerlendirilmesi Tamamlanmıştır.<br/>
-                                        2- Sınav Evrakları Komisyon Huzurunda Okul/Kurum Müdürlüğüne Teslim Edilmiştir.
-                                    </div>
-                                    ${sigBlockHtml}
-                                </td>
-                            </tr>
-                        </tbody>
+                <div style="margin-top:24px;">
+                    <div style="text-align:center; width:33%; font-size:9.8pt; margin-bottom:10px;">${escapeHtml(tarih)}</div>
+                    <table class="sig-grid-dynamic">
+                        <tr>
+                            <td><b>${escapeHtml(baskan)}</b><br/><div style="margin-top:18px;">Komisyon Başkanı</div></td>
+                            <td><b>${escapeHtml(uye1)}</b><br/><div style="margin-top:18px;">Üye</div></td>
+                            <td><b>${escapeHtml(uye2)}</b><br/><div style="margin-top:18px;">Üye</div></td>
+                            ${uye3SigHtml}
+                        </tr>
                     </table>
                 </div>
             </div>
         </div>
     `;
 }
-// 4. SINAV DOSYASI ÜST YAZISI / ZARF ETİKETİ (07094904_sinavdosyasiustyazisi.xls — A4'e 2'li, merkeze ortalı 6 satır başlık, kesim yazısız)
-function buildZarfUstYazisiPage() {
+// 5. SINAV SARF ÇİZELGESİ (yeni form.pdf Sayfa 4 Birebir Format)
+function buildSarfCizelgesiPage() {
     if (!currentExam) return "";
-    const kurum = upTr(document.getElementById("cfgMerkez").value.trim() || "İMES SÜHEYL ERBOZ MESLEKİ EĞİTİM MERKEZİ");
-    const ogretimYili = document.getElementById("cfgOgretimYili").value.trim() || "2026-2027";
-    const donemRaw = upTr(document.getElementById("cfgDonem").value.trim() || "EKİM 2026");
-    const donemClean = donemRaw.replace(/\s*DÖNEMİ$/i, "").trim();
-    const baslamaSaat = document.getElementById("cfgSaat").value.trim() || "";
-    const dersAdi = document.getElementById("cfgDersAdi").value.trim() || "PRATİK SINAV (BECERİ / UYGULAMA)";
-    const degTarihSaat = document.getElementById("cfgDegerlendirmeTarihSaat").value.trim() ||
-        (document.getElementById("cfgTarih").value.trim() ? `${document.getElementById("cfgTarih").value.trim()}     Saat: ……:……` : "…… / …… / 202…     Saat: ……:……");
-    const toplamOgrenci = candidates.length ? String(candidates.length) : "";
-    const katilan = document.getElementById("cfgKatilanSayisi").value.trim() || "";
-    const katilmayan = document.getElementById("cfgKatilmayanSayisi").value.trim() || "";
-    const basarili = document.getElementById("cfgBasariliSayisi").value.trim() || "";
-    const basarisiz = document.getElementById("cfgBasarisizSayisi").value.trim() || "";
-    const baskan = document.getElementById("cfgBaskan").value.trim() || "………………………………";
-    const uye1 = document.getElementById("cfgDeg1").value.trim() || (candidates[0]?.degerlendirici || "………………………………");
-    const uye2 = document.getElementById("cfgDeg2").value.trim() || (candidates[0]?.degerlendirici2 || "………………………………");
-    const uye3 = document.getElementById("cfgDeg3").value.trim();
-    const alanLine = upTr(currentExam.al).endsWith("ALANI") ? upTr(currentExam.al) : `${upTr(currentExam.al)} ALANI`;
+    const kurumRaw = document.getElementById("cfgMerkez").value.trim() || "İMES SÜHEYL ERBOZ MESLEKİ EĞİTİM MERKEZİ";
+    const kurumTitle = /MÜDÜRLÜĞÜ$/i.test(kurumRaw) ? upTr(kurumRaw) : `${upTr(kurumRaw)} MÜDÜRLÜĞÜ`;
+    const tarih = document.getElementById("cfgTarih").value.trim() || (candidates[0]?.tarih || "");
+    const saat = document.getElementById("cfgSaat").value.trim() || (candidates[0]?.saat || "09:00");
     const rawDal = currentExam.am ? `${currentExam.dl} (${currentExam.am})` : currentExam.dl;
-    const dalLine = upTr(rawDal).endsWith("DALI") ? upTr(rawDal) : `${upTr(rawDal)} DALI`;
-    const uye3SigHtml = uye3
-        ? `<td><b>${escapeHtml(uye3)}</b><br/>Üye</td>`
-        : "";
-    const singleLabelHtml = `
-        <div class="envelope-half">
-            <div>
-                <div class="zarf-header-centered">
-                    <div>T.C.</div>
-                    <div>MİLLÎ EĞİTİM BAKANLIĞI</div>
-                    <div>${escapeHtml(kurum)}</div>
-                    <div>${escapeHtml(ogretimYili)} EĞİTİM-ÖĞRETİM YILI ${escapeHtml(donemClean)} DÖNEMİ ${escapeHtml(upTr(currentExam.sv))} SINAVLARI</div>
-                    <div>${escapeHtml(alanLine)}</div>
-                    <div>${escapeHtml(dalLine)}</div>
+    const cleanDal = rawDal.replace(/\s*DALI$/i, "").trim();
+    const customDers = document.getElementById("cfgDersAdi").value.trim();
+    const dersAdi = customDers || cleanDal;
+    const baskan = document.getElementById("cfgBaskan").value.trim();
+    const uye1 = document.getElementById("cfgDeg1").value.trim() || (candidates[0]?.degerlendirici || "");
+    const sarfUye = document.getElementById("cfgSarfUye")?.value.trim() || uye1;
+    const extraRows = Math.max(2, parseInt(document.getElementById("cfgExtraRows").value, 10) || 2);
+    const rowsHtml = [];
+    candidates.forEach((c, idx) => {
+        const cEx = getCandidateExam(c);
+        const cDal = (c.dal || (cEx ? (cEx.am ? `${cEx.dl} (${cEx.am})` : cEx.dl) : cleanDal)).replace(/\s*DALI$/i, "").trim();
+        rowsHtml.push(`
+            <tr>
+                <td style="text-align:center;">${idx + 1}</td>
+                <td>${escapeHtml(cDal)}</td>
+                <td style="text-align:center;">${escapeHtml(c.tc || "")}</td>
+                <td>${escapeHtml(c.adSoyad)}</td>
+                <td style="text-align:center;"></td>
+                <td style="text-align:center;"></td>
+                <td></td>
+            </tr>
+        `);
+    });
+    for (let i = 0; i < extraRows; i++) {
+        rowsHtml.push(`
+            <tr>
+                <td style="text-align:center;">&nbsp;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        `);
+    }
+    return `
+        <div class="a4-page">
+            <div class="a4-content" style="padding-top:12mm;">
+                <div class="cizelge-header">
+                    <h2>T.C.</h2>
+                    <h2>${escapeHtml(kurumTitle)}</h2>
+                    <h3>SINAV SARF ÇİZELGESİ</h3>
                 </div>
-                <table class="zarf-info-table">
+                <table class="cizelge-meta">
                     <tbody>
                         <tr>
-                            <td class="z-lbl">DERSİN ADI / SINAV TÜRÜ</td>
-                            <td style="font-weight:bold;">${escapeHtml(dersAdi)}</td>
+                            <td style="width:18%; font-weight:bold; text-align:center;">Dersin Adı</td>
+                            <td style="width:50%;">${escapeHtml(dersAdi)}</td>
+                            <td colspan="2" style="width:32%; font-weight:bold; text-align:right; padding-right:12px;">Sınav Tarihi / Saati</td>
                         </tr>
                         <tr>
-                            <td class="z-lbl">SINAV BAŞLAMA SAATİ</td>
-                            <td>${escapeHtml(baslamaSaat)}</td>
-                        </tr>
-                        <tr>
-                            <td class="z-lbl">SINAVA KATILAN ÖĞRENCİ SAYISI</td>
-                            <td>${escapeHtml(katilan)}</td>
-                        </tr>
-                        <tr>
-                            <td class="z-lbl">SINAVA KATILMAYAN ÖĞRENCİ SAYISI</td>
-                            <td>${escapeHtml(katilmayan)}</td>
-                        </tr>
-                        <tr>
-                            <td class="z-lbl">TOPLAM ÖĞRENCİ SAYISI</td>
-                            <td>${escapeHtml(toplamOgrenci)}</td>
-                        </tr>
-                        <tr>
-                            <td class="z-lbl">BAŞARILI OLAN ÖĞRENCİ SAYISI</td>
-                            <td>${escapeHtml(basarili)}</td>
-                        </tr>
-                        <tr>
-                            <td class="z-lbl">BAŞARISIZ OLAN ÖĞRENCİ SAYISI</td>
-                            <td>${escapeHtml(basarisiz)}</td>
+                            <td style="font-weight:bold; text-align:center;">Beceri Sınavı</td>
+                            <td>${escapeHtml(upTr(currentExam.sv))}</td>
+                            <td style="font-weight:bold; text-align:right;">${escapeHtml(tarih)}</td>
+                            <td style="font-weight:bold; text-align:right; width:70px; padding-right:12px;">${escapeHtml(saat)}</td>
                         </tr>
                     </tbody>
                 </table>
-                <div style="margin-top:7px; font-weight:bold; font-size:9.5pt;">
-                    İNCELEMENİN YAPILDIĞI TARİH – SAAT : &nbsp; ${escapeHtml(degTarihSaat)}
+                <table class="cizelge-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="3" style="width:48px;">Sıra No</th>
+                            <th colspan="5">Sınava Giren Adayın</th>
+                            <th rowspan="3" style="width:125px;">İmza</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" style="width:150px;">Mesleği</th>
+                            <th rowspan="2" style="width:88px;">T.C. Kimlik<br/>Numarası</th>
+                            <th rowspan="2">Adı Soyadı</th>
+                            <th colspan="2" style="width:155px;">Kağıt Adedi</th>
+                        </tr>
+                        <tr>
+                            <th style="width:72px;">Rakamla</th>
+                            <th style="width:83px;">Yazıyla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rowsHtml.join("")}
+                    </tbody>
+                </table>
+                <div style="margin-top:65px; font-family:Arial, Helvetica, sans-serif;">
+                    <table class="sig-grid-dynamic">
+                        <tr>
+                            <td>
+                                <div style="margin-bottom:6px;">${escapeHtml(tarih)}</div>
+                                <b>${escapeHtml(baskan)}</b><br/>
+                                <div style="margin-top:4px;">Komisyon Başkanı</div>
+                            </td>
+                            <td>
+                                <div style="margin-bottom:6px;">&nbsp;</div>
+                                <b>${escapeHtml(sarfUye)}</b><br/>
+                                <div style="margin-top:4px;">Üye</div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <table class="sig-grid-dynamic" style="margin-top:4px;">
-                <tr>
-                    <td><b>${escapeHtml(baskan)}</b><br/>Sınav Kom. Başkanı</td>
-                    <td><b>${escapeHtml(uye1)}</b><br/>Üye</td>
-                    <td><b>${escapeHtml(uye2)}</b><br/>Üye</td>
-                    ${uye3SigHtml}
-                </tr>
-            </table>
         </div>
     `;
+}
+// 6. SINAV NOT ÇİZELGESİ (yeni form.pdf Sayfa 5 Birebir Format)
+function buildNotCizelgesiPage() {
+    if (!currentExam) return "";
+    const kurumRaw = document.getElementById("cfgMerkez").value.trim() || "İMES SÜHEYL ERBOZ MESLEKİ EĞİTİM MERKEZİ";
+    const kurumTitle = /MÜDÜRLÜĞÜ$/i.test(kurumRaw) ? upTr(kurumRaw) : `${upTr(kurumRaw)} MÜDÜRLÜĞÜ`;
+    const tarih = document.getElementById("cfgTarih").value.trim() || (candidates[0]?.tarih || "");
+    const saat = document.getElementById("cfgSaat").value.trim() || (candidates[0]?.saat || "09:00");
+    const rawDal = currentExam.am ? `${currentExam.dl} (${currentExam.am})` : currentExam.dl;
+    const cleanDal = rawDal.replace(/\s*DALI$/i, "").trim();
+    const customDers = document.getElementById("cfgDersAdi").value.trim();
+    const dersAdi = customDers || cleanDal;
+    const baskan = document.getElementById("cfgBaskan").value.trim();
+    const uye1 = document.getElementById("cfgDeg1").value.trim() || (candidates[0]?.degerlendirici || "");
+    const uye2 = document.getElementById("cfgDeg2").value.trim() || (candidates[0]?.degerlendirici2 || "");
+    const uye3 = document.getElementById("cfgDeg3").value.trim();
+    const extraRows = Math.max(2, parseInt(document.getElementById("cfgExtraRows").value, 10) || 2);
+    const rowsHtml = [];
+    candidates.forEach((c, idx) => {
+        const cEx = getCandidateExam(c);
+        const cDal = (c.dal || (cEx ? (cEx.am ? `${cEx.dl} (${cEx.am})` : cEx.dl) : cleanDal)).replace(/\s*DALI$/i, "").trim();
+        rowsHtml.push(`
+            <tr>
+                <td style="text-align:center;">${idx + 1}</td>
+                <td>${escapeHtml(cDal)}</td>
+                <td style="text-align:center;">${escapeHtml(c.tc || "")}</td>
+                <td>${escapeHtml(c.adSoyad)}</td>
+                <td style="text-align:center;"></td>
+                <td style="text-align:center;"></td>
+                <td></td>
+            </tr>
+        `);
+    });
+    for (let i = 0; i < extraRows; i++) {
+        rowsHtml.push(`
+            <tr>
+                <td style="text-align:center;">&nbsp;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        `);
+    }
+    const uye3CellHtml = uye3
+        ? `<td><div style="margin-bottom:6px;">&nbsp;</div><b>${escapeHtml(uye3)}</b><br/><div style="margin-top:4px;">Üye</div></td>`
+        : "";
     return `
         <div class="a4-page">
-            <div class="a4-content" style="justify-content:space-between;">
-                ${singleLabelHtml}
-                <div class="cut-divider"></div>
-                ${singleLabelHtml}
+            <div class="a4-content" style="padding-top:12mm;">
+                <div class="cizelge-header">
+                    <h2>T.C.</h2>
+                    <h2>${escapeHtml(kurumTitle)}</h2>
+                    <h3>SINAV NOT ÇİZELGESİ</h3>
+                </div>
+                <table class="cizelge-meta">
+                    <tbody>
+                        <tr>
+                            <td style="width:18%; font-weight:bold; text-align:center;">Dersin Adı</td>
+                            <td style="width:50%;">${escapeHtml(dersAdi)}</td>
+                            <td colspan="2" style="width:32%; font-weight:bold; text-align:right; padding-right:12px;">Sınav Tarihi / Saati</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold; text-align:center;">Beceri Sınavı</td>
+                            <td>${escapeHtml(upTr(currentExam.sv))}</td>
+                            <td style="font-weight:bold; text-align:right;">${escapeHtml(tarih)}</td>
+                            <td style="font-weight:bold; text-align:right; width:70px; padding-right:12px;">${escapeHtml(saat)}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="cizelge-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="3" style="width:48px;">Sıra No</th>
+                            <th colspan="5">Sınava Giren Adayın</th>
+                            <th rowspan="3" style="width:125px;">Düşünceler</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" style="width:150px;">Mesleği</th>
+                            <th rowspan="2" style="width:88px;">T.C. Kimlik<br/>Numarası</th>
+                            <th rowspan="2">Adı Soyadı</th>
+                            <th colspan="2" style="width:155px;">Sınav Notu</th>
+                        </tr>
+                        <tr>
+                            <th style="width:72px;">Rakamla</th>
+                            <th style="width:83px;">Yazıyla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rowsHtml.join("")}
+                    </tbody>
+                </table>
+                <div style="margin-top:65px; font-family:Arial, Helvetica, sans-serif;">
+                    <table class="sig-grid-dynamic">
+                        <tr>
+                            <td>
+                                <div style="margin-bottom:6px;">${escapeHtml(tarih)}</div>
+                                <b>${escapeHtml(baskan)}</b><br/>
+                                <div style="margin-top:4px;">Komisyon Başkanı</div>
+                            </td>
+                            <td>
+                                <div style="margin-bottom:6px;">&nbsp;</div>
+                                <b>${escapeHtml(uye1)}</b><br/>
+                                <div style="margin-top:4px;">Üye</div>
+                            </td>
+                            <td>
+                                <div style="margin-bottom:6px;">&nbsp;</div>
+                                <b>${escapeHtml(uye2)}</b><br/>
+                                <div style="margin-top:4px;">Üye</div>
+                            </td>
+                            ${uye3CellHtml}
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     `;
@@ -3357,24 +4129,44 @@ function renderPreview() {
         container.innerHTML = "";
         return;
     }
+    const paket = document.getElementById("selZarfPaket")?.value || "__all";
     let html = "";
-    if (currentDocMode === "forms") {
-        html = candidates.map((c, idx) => buildEvaluationPagesForCandidate(c, idx)).join("");
-    } else if (currentDocMode === "sonuc") {
-        html = buildSonucTutanagiPage();
-    } else if (currentDocMode === "tutanak") {
-        html = buildSinavTutanagiPage();
-    } else if (currentDocMode === "zarf") {
-        html = buildZarfUstYazisiPage();
-    } else if (currentDocMode === "all") {
-        html = buildZarfUstYazisiPage() +
-               buildSinavTutanagiPage() +
-               buildSonucTutanagiPage() +
-               candidates.map((c, idx) => buildEvaluationPagesForCandidate(c, idx)).join("");
+    if (paket === "__each") {
+        html = getZarfGroups().map(g => withCandidates(g.list, buildDocsForCurrentMode)).join("");
+    } else if (paket.startsWith("z:")) {
+        const no = paket.slice(2);
+        html = withCandidates(candidates.filter(c => getCandZarfNo(c) === no), buildDocsForCurrentMode);
+    } else {
+        html = buildDocsForCurrentMode();
     }
     container.innerHTML = html;
     const pageCount = container.querySelectorAll(".a4-page").length;
     document.getElementById("pageCountBadge").textContent = `${pageCount} A4 Sayfası Hazır`;
+}
+// Seçili evrak sekmesine göre (global "candidates" listesi üzerinden) HTML üretir
+function buildDocsForCurrentMode() {
+    let html = "";
+    if (currentDocMode === "forms") {
+        html = candidates.map((c, idx) => buildEvaluationPagesForCandidate(c, idx)).join("");
+    } else if (currentDocMode === "zarf") {
+        html = buildZarfUstYazisiPage();
+    } else if (currentDocMode === "tutanak") {
+        html = buildSinavTutanagiPage();
+    } else if (currentDocMode === "sonuc") {
+        html = buildSonucTutanagiPage();
+    } else if (currentDocMode === "sarf_cizelge") {
+        html = buildSarfCizelgesiPage();
+    } else if (currentDocMode === "not_cizelge") {
+        html = buildNotCizelgesiPage();
+    } else if (currentDocMode === "all") {
+        html = buildZarfUstYazisiPage() +
+               buildSinavTutanagiPage() +
+               buildSonucTutanagiPage() +
+               buildSarfCizelgesiPage() +
+               buildNotCizelgesiPage() +
+               candidates.map((c, idx) => buildEvaluationPagesForCandidate(c, idx)).join("");
+    }
+    return html;
 }
 // ================= YENİ DAL / KRİTER EKLE & DÜZENLE MODALI =================
 function openBranchModal(mode) {
