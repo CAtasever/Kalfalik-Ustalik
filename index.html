@@ -929,6 +929,47 @@
             margin: 3mm 0;
             height: 0;
         }
+        /* ================= MOBİL UYUMLULUK ================= */
+        .mobile-scroll-hint { display: none; }
+        @media screen {
+            .a4-page { zoom: var(--a4-scale, 1); }
+        }
+        @media (max-width: 780px) {
+            .no-print { margin: 8px auto; padding: 0 8px; }
+            .top-banner { padding: 12px 14px; }
+            .brand-logo { width: 40px; height: 40px; }
+            .brand-title h1 { font-size: 15.5px; }
+            .brand-title p { font-size: 11px; }
+            .brand-title p .long-desc { display: none; }
+            .panel-body { padding: 12px 10px; }
+            .section-box { padding: 12px 11px; }
+            /* iOS'ta odaklanınca sayfanın büyümesini önler (16px altı yazı tipi otomatik yakınlaştırır) */
+            input, select, textarea { font-size: 16px !important; }
+            .form-grid-2 { grid-template-columns: 1fr 1fr; }
+            .field label .sub { display: block; }
+            .candidate-table-container { padding: 10px; }
+            .candidate-table-header h2 { font-size: 13px; line-height: 1.5; }
+            .table-scroll { max-height: 60vh; -webkit-overflow-scrolling: touch; }
+            .mobile-scroll-hint { display: block; font-size: 11px; color: #64748b; margin: 0 0 5px 2px; }
+            /* Sabit sütun: kaydırırken aday adı görünür kalsın */
+            table.ui-table td:nth-child(4), table.ui-table th:nth-child(4) {
+                position: sticky; left: 0; background: #fff; z-index: 1; box-shadow: 2px 0 4px rgba(15,23,42,0.08);
+            }
+            table.ui-table th:nth-child(4) { background: #e2e8f0; z-index: 3; }
+            table.ui-table td:nth-child(4) input { min-width: 130px; }
+            table.ui-table td:nth-child(5) input { min-width: 140px; }
+            table.ui-table td:nth-child(6) input { min-width: 125px; }
+            table.ui-table td:nth-child(7) input { min-width: 82px; }
+            table.ui-table td:nth-child(n+8) input, table.ui-table td:nth-child(n+8) select { min-width: 170px; }
+            .doc-mode-bar { padding: 10px; }
+            .doc-tabs { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+            .doc-tab { white-space: nowrap; flex: 0 0 auto; padding: 8px 10px; font-size: 12px; }
+            #zarfPaketWrap { width: 100%; white-space: normal !important; }
+            #selZarfPaket { flex: 1; max-width: none !important; }
+            .print-cta { width: 100%; }
+            .preview-container { padding: 10px 0 30px; gap: 12px; }
+            .modal-card { width: 96vw !important; max-height: 92vh; }
+        }
         /* ================= YAZDIRMA (@media print) ================= */
         @page {
             size: A4 portrait;
@@ -960,6 +1001,7 @@
                 break-after: page !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
+                zoom: 1 !important;
             }
             .a4-page:last-child {
                 page-break-after: auto !important;
@@ -977,7 +1019,7 @@
                 <img id="bannerLogo" class="brand-logo" alt="MEB Logo" />
                 <div class="brand-title">
                     <h1>MEB Kalfalık ve Ustalık Beceri Sınavı Evrak Otomasyonu</h1>
-                    <p>%100 Lokal ve İnternetsiz • <span id="bannerDbInfo">Meslek dalı verisi yükleniyor...</span> • Tam Sınav Dosyası (Değerlendirme Formu + Zarf + Sınav Tutanağı + Sonuç Tutanağı + Sarf & Not Çizelgesi)</p>
+                    <p>%100 Lokal ve İnternetsiz • <span id="bannerDbInfo">Meslek dalı verisi yükleniyor...</span><span class="long-desc"> • Tam Sınav Dosyası (Değerlendirme Formu + Zarf + Sınav Tutanağı + Sonuç Tutanağı + Sarf & Not Çizelgesi)</span></p>
                 </div>
             </div>
             <div class="banner-actions">
@@ -1280,6 +1322,7 @@
                         <button type="button" class="btn-danger btn-sm" onclick="clearCandidates()">🗑️ Listeyi Temizle</button>
                     </div>
                 </div>
+                <div class="mobile-scroll-hint">↔️ Tabloyu sağa-sola kaydırarak diğer sütunları görebilirsiniz.</div>
                 <div class="table-scroll">
                     <table class="ui-table">
                         <thead>
@@ -4140,9 +4183,23 @@ function renderPreview() {
         html = buildDocsForCurrentMode();
     }
     container.innerHTML = html;
+    fitA4PreviewToScreen();
     const pageCount = container.querySelectorAll(".a4-page").length;
     document.getElementById("pageCountBadge").textContent = `${pageCount} A4 Sayfası Hazır`;
 }
+// Dar ekranlarda (telefon) A4 önizlemesini ekran genişliğine sığdırır; yazdırmayı etkilemez
+function fitA4PreviewToScreen() {
+    const container = document.getElementById("previewContainer");
+    if (!container) return;
+    const a4px = 210 * 96 / 25.4; // 210mm ≈ 794px
+    const avail = Math.max(240, (document.documentElement.clientWidth || window.innerWidth) - 16);
+    const scale = avail < a4px ? avail / a4px : 1;
+    container.style.setProperty("--a4-scale", scale.toFixed(4));
+}
+window.addEventListener("resize", () => {
+    clearTimeout(window.__fitA4Timer);
+    window.__fitA4Timer = setTimeout(fitA4PreviewToScreen, 150);
+});
 // Seçili evrak sekmesine göre (global "candidates" listesi üzerinden) HTML üretir
 function buildDocsForCurrentMode() {
     let html = "";
